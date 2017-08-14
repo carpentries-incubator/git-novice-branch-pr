@@ -6,7 +6,7 @@ questions:
 - "What are branches?"
 - "How can I work in parallel using branches?"
 objectives:
-- "Explain why branches can be useful."
+- "Understand why branches are useful for working on separate tasks in the same repository."
 - "Use branches for working in parallel"
 - "Merge branches back into the master"
 keypoints:
@@ -18,7 +18,7 @@ However, there are times when we might want to keep
 our main work safe from experimental changes we are working on.
 To do this we can use branches to work in parallel from our main branch.
 
-We didn't see it before the the first branch made is called `master`.
+We didn't see it before but the first branch made is called `master`.
 We can see the existing branches by typing 
 
 ~~~
@@ -36,7 +36,7 @@ The '*' indicates which branch we are currently on.
 
 In this lesson, Dracula is trying to run an analysis
 and doesn't know if it will be faster in bash or python.
-To keep his master branch safe he will do separate branch
+To keep his master branch safe he will use separate branches
 for both bash and python analysis.
 Then he will merge the branch with the faster script
 into his master branch.
@@ -147,7 +147,7 @@ $ git log --oneline
 
 
 Now we can repeat the process with the `bashdev` branch.
-This time lets create and switch two the `bashdev` branch
+This time let's create and switch two the `bashdev` branch
 in one command.
 We can do so by adding the `-b` flag to checkout.
 
