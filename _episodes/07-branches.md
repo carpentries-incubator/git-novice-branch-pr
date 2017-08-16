@@ -6,8 +6,10 @@ questions:
 - "What are branches?"
 - "How can I work in parallel using branches?"
 objectives:
-- "Understand why branches are useful for working on separate tasks in the same repository."
-- "Use branches for working in parallel"
+- "Understand why branches are useful for:"
+- "working on separate tasks in the same repository concurrently"
+- "trying multiple solutions to a problem"
+- "check-pointing versions of code"
 - "Merge branches back into the master"
 keypoints:
 - "Branches can be useful for developing while keeping the main line static."
@@ -16,10 +18,15 @@ keypoints:
 So far we've always been working in a straight timeline.
 However, there are times when we might want to keep
 our main work safe from experimental changes we are working on.
-To do this we can use branches to work in parallel from our main branch.
+To do this we can use branches to work on separate tasks in parallel
+without changing our current branch, `master`.
 
 We didn't see it before but the first branch made is called `master`.
-We can see the existing branches by typing 
+This is the default branch created when initializing a repository and
+is often considered to be the "clean" or "working" version of a
+repository's code.
+
+We can what branches exist in a repository by typing
 
 ~~~
 $ git branch
@@ -65,6 +72,20 @@ $ git branch
 
 We can see that we created the `pythondev` branch but we
 are still in the master branch.
+
+We can also see this in the output of the `git status` command.
+
+~~~
+$ git status
+~~~
+{: .bash}
+
+~~~
+On branch master
+nothing to commit, working directory clean
+~~~
+{: .output}
+
 To switch to our new branch we can use the `checkout` command
 we learned earlier and check our work with `git branch`.
 
@@ -80,13 +101,13 @@ $ git branch
 ~~~
 {: .output}
 
+Before we used the `checkout` command to checkout a commit using
+commit hashs or `HEAD`. This is similar but now we have given our most
+recent commit in the branch a name, the branch name.
 
 Here you can use `git log` and `ls` to see that the history and 
-files are the same as our `master` branch.  
-Note: They will only match the `master` branch up until 
-the new branch was made from it.
-New changed in the `master` branch would not be added to `pythondev`
-or vice versa, unless explicitly merged.
+files are the same as our `master` branch. This will be true until
+some changes are committed to our new branch.
 
 Now lets make our python script.  
 For simplicity sake, we will `touch` the script making an empty file
@@ -112,17 +133,17 @@ $ git commit -m "Wrote and tested python analysis script"
 ~~~
 {: .output}
 
-
 Lets check our work!
+
 ~~~
 $ ls
 $ git log --oneline
 ~~~
 {: .bash}
 
+As expected, we see our commit in the log.
 
-Now let's switch back to the `master` branch and confirm that
-it is unchanged.
+Now let's switch back to the `master` branch.
 
 ~~~
 $ git checkout master
@@ -136,6 +157,8 @@ $ git branch
 ~~~
 {: .output}
 
+Let's explore the repository a bit.
+
 Now that we've confirmed we are on the `master` branch again.
 Let's confirm that `analysis.py` and our last commit aren't in `master`.
 
@@ -145,14 +168,58 @@ $ git log --oneline
 ~~~
 {: .bash}
 
+We no longer see the file `analysis.py` and our latest commit doesn't
+appear in this branch's history. But do not fear! All of our hard work
+remains in the `pythondev` branch. We can confirm this by moving back
+to that branch.
 
-Now we can repeat the process with the `bashdev` branch.
+~~~
+$ git checkout pythondev
+$ git branch
+~~~
+{: .bash}
+
+~~~
+  master
+* pythondev
+~~~
+{: .output}
+
+~~~
+$ ls
+$ git log --oneline
+~~~
+{: .bash}
+
+And we see that our `analysis.py` file and respecitve commit have been
+preserved in the `pythondev` branch.
+
+Now we can repeat the process for our bash script in a branch called
+`bashdev`.
+
+First we must checkout the `master` branch again. New branches will
+include the entire history of up to the current commit, and we'd like
+to keep these two tasks separate.
+
+~~~
+$ git checkout master
+$ git branch
+~~~
+{: .bash}
+
+~~~
+* master
+  pythondev
+~~~
+{: .output}
+
 This time let's create and switch two the `bashdev` branch
 in one command.
+
 We can do so by adding the `-b` flag to checkout.
 
 ~~~
-$ git branch -b bashdev
+$ git checkout -b bashdev
 $ git branch
 ~~~
 {: .bash}
@@ -195,13 +262,13 @@ $ git log --oneline
 
 So it turns out the python `analysis.py` is much faster than `analysis.sh`.
 
-Let's merge this version into our `master` branch to move
-forward with.
+Let's merge this version into our `master` branch so we can use it for
+our work going forward.
+
 Merging brings the changes from a different branch into 
 the current branch.
 
-In order to move this branch into `master` we must first switch
-to the `master` branch.
+First we must switch to the branch we're merging changes into, `master`.
 
 ~~~
 $ git checkout master
@@ -216,7 +283,10 @@ $ git branch
 ~~~
 {: .output}
 
-Now we can `merge` the `pythondev` branch into our current branch (`master`).
+Now we can `merge` the `pythondev` branch into our current branch
+(`master`). In english, this command could be stated as "`git`, please
+`merge` the changes in the `pythondev` branch into the current branch
+I'm in".
 
 ~~~
 $ git merge pythondev
@@ -232,11 +302,25 @@ Fast-forward
 ~~~
 {: .output}
 
+Now that we've merged the `pythondev` into `master`, these changes now
+exist in both branches. This could be confusing in the future if we
+stumble upon the `pythondev` branch again.
 
-Now that we've merged the `pythondev` branch.
-We can delete our old branches so we don't get confused about them later.
+We can delete our old branches so as to avoid this confusion later.
 We can do so by adding the `-d` flag to the `git branch` command.
 
+~~~
+git branch -d pythondev
+~~~
+{: .bash}
+
+~~~
+Deleted branch pythondev (was x792csa1).
+~~~
+{: .output}
+
+And because we don't want to keep the changes in the `bashdev` branch,
+we can delete the `bashdev` branch as well
 ~~~
 $ git branch -d bashdev
 ~~~
@@ -262,17 +346,3 @@ git branch -D bashdev
 Deleted branch bashdev (was 2n779ds).
 ~~~
 {: .output}
-
-Now we can delete the `pythondev` branch as well
-
-~~~
-git branch -d pythondev
-~~~
-{: .bash}
-
-~~~
-Deleted branch pythondev (was x792csa1).
-~~~
-{: .output}
-
-
