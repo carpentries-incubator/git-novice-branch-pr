@@ -1,50 +1,80 @@
 ---
-title: Branching and Pull Requests
+title: Pull Requests
 teaching: 60
 exercises: 1
 questions:
-- "What is branching for?"
 - "What are pull requests for?"
 - "How can I make a pull request"
 objectives:
-- "Understand how to make a branch and what they are useful for"
+- "Define the terms fork, clone, origin, remote, upstream"
 - "Understand how to make a pull request and what they are useful for"
 keypoints:
 - "Pull requests suggest changes to repos where you don't have privileges"
-- "Branches can help you to suggest not connected changes or develop changes outside of the main repo."
 ---
 
 
 Pull requests are a great way to collaborate with others using github.
-Instead of making changes directly to a repository.
-This is useful if you don't have permission to modify a repository directly or
+Instead of making changes directly to a repository you can suggest changes to a repo.
+This can be useful if you don't have permission to modify a repository directly or
 you want someone else to review your changes.
 
 For this lesson we will be working on the `countries` repository together.
-Open the github link for the `countries` repo
-at [https://github.com/McMahonLab/countries](https://github.com/McMahonLab/countries).
+Open the github link for the `countries` repo provided by the instructor 
+in your browser window.
 
 ![](../fig/github_screenshot_upstream_repo.png)
 
-Then click the fork button in the upper right hand conner.  
+> ## Repo owner differences
+>
+> You may have noticed that the `countries` repo in this lesson's pictures 
+> is owned by the 'McMahonLab' organization and this doesn't match
+> the address you were given.
+> This is to be expected because this will differ depending on 
+> what organization your instructor used to setup the `countries` repo.
+> 
+> You will also see your username where the 'sstevens2' is in the picutres.
+> 
+{: .callout}
 
-Next we are going to setup the connections to both our forked version and the authoritative version we forked it from.
+Once at the `countries` repo, click the **Fork** button which can be found
+in the upper right hand conner of the window. 
+Forking the repository makes us each our own copy of the repo in our github 
+account which we can edit.
 
 ![](../fig/github_screenshot_upstream_forking.png)
 
-First we will clone the repo from our forked version so that our version is setup as the 'origin' connection.
-Copy the web address for your forked repo (from the web address line or click 'clone and download' and copy that).
+Next we need to get this repo on our local computer and
+setup connections from our computer to both our forked version 
+and the authoritative version we forked it from.
+
+First we will **clone** the repo from our forked version.
+The clone command does two things:
+	1. Copies the repo to your local computer
+	2. Sets up a connection called 'origin' between your computer and the github repo
+Copy the web address for your forked version of repo 
+(from the web address line or click 'clone and download' and copy that).
 
 ![](../fig/github_screenshot_cloneOrigin.png)
 
-Open your terminal and navigate to a folder you'd like to hold this repo, maybe your `Desktop`.
-Once there you can clone the repo using the link we just copied.
+In terminal or Gitbash, navigate to a folder you'd like to hold this repo,
+we will place it on our `Desktop`.
+Once there you can use the `clone` command with the link you copied as the first argument.
 
 ~~~
 $ cd Desktop
 $ git clone https://github.com/USERNAME/countries.git
 ~~~
 {: .bash}
+
+> ## Why does the command above say 'USERNAME'?
+>
+> So that we can't copy the command above and accidently clone someone else's
+> version of countries to our computer the command above uses the placeholder
+> 'USERNAME' where you should put your own username if your copied from above
+> instead of copying the link from your browser and pasting it into the command.
+> 
+> 
+{: .callout}
 
 ~~~
 Cloning into 'countries'...
@@ -55,9 +85,10 @@ Unpacking objects: 100% (6/6), done.
 ~~~
 {: .output}
 
-Next we will set up a connection or remote to the authoritative repository.
-In your browser, you can get back to this repo by clicking on the link in the upper left hand corner,
-under your username and repo.
+Next we will set up a connection or **remote** to the authoritative repository 
+(the original version given to you by your instructor).
+In your browser, you can go back this repo by clicking on the link that says 'forked from'
+in the upper left hand corner, under your username and repo name.
 
 Copy the web address for this repo (from the web address line or click the 'clone and download' and copy that).
 
