@@ -1,7 +1,7 @@
 ---
 title: Pull Requests
 teaching: 60
-exercises: 1
+exercises: 15
 questions:
 - "What are pull requests for?"
 - "How can I make a pull request"
@@ -90,20 +90,32 @@ Next we will set up a connection or **remote** to the authoritative repository
 In your browser, you can go back this repo by clicking on the link that says 'forked from'
 in the upper left hand corner, under your username and repo name.
 
-Copy the web address for this repo (from the web address line or click the 'clone and download' and copy that).
+Copy the web address for this repo 
+(from the web address line or click the 'clone and download' and copy that).
 
 ![](../fig/github_screenshot_upstream_repo.png)
 
 Then back in your terminal, navigate in the cloned repo and add the remote connection.
-For this command we must give the new connection a different nickname, where our original connection is 'origin'
+For this command we must give the new connection a different nickname, 
+where our original connection is 'origin'
 this new connection will be called 'upstream'.
-You could give it a different nickname but often the authoritative is often 'upstream'
+You could give it a different nickname but 'upstream' is a common nickname for
+the authoritative repository.
 
 ~~~
 $ cd countries
-$ git remote add upstream https://github.com/McMahonLab/countries.git
+$ git remote add upstream https://github.com/INSTRUCTOR-GIVEN/countries.git
 ~~~
 {: .bash}
+
+> ## If you tried copying the command above...
+>
+> You will have to replace 'INSTRUCTOR-GIVEN' with the site your instructor
+> indicated at the beginning of this lesson. This will vary depending
+> on how your instructor set up for this lesson.
+> 
+> 
+{: .callout}
 
 At anytime you can see the remote connections your repo has using the following command:
 
@@ -115,32 +127,66 @@ $ git remote -v
 ~~~
 origin	https://github.com/USERNAME/countries.git (fetch)
 origin	https://github.com/USERNAME/countries.git (push)
-upstream	https://github.com/McMahonLab/countries.git (fetch)
-upstream	https://github.com/McMahonLab/countries.git (push)
+upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (fetch)
+upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (push)
 ~~~
 {: .output}
 
-Now that we have this setup done, which is only needed the first time, we can now suggest changes to this repo.
-Each person will add info about a specific country to the repo.
-Since you cloned the repo a template file with info on the United States has been added.
-First we will update our local version of the repo, with this change.
+Now that we have this setup done, which is only needed the first time, 
+we can now suggest changes to this repo.
+Each person will add a new file with info about a new country in it.
+
+The instructor will now add a single file to the repository containing 
+information about the the United States.
+
+Next, we will update our local version of the repo, with this change by `pull`ing down
+the changes from the 'upstream' version's master branch.
 
 ~~~
 $ git pull upstream master
 ~~~
 {: .bash}
 
-Now your local version of the repo is updated but our forked version of the repo is not yet up to date.
-Now we will update the our forked version.
+Now your local version of the repo is updated but our forked version of the 
+repo is not yet up to date.
+You can reload your fork in github and see it does not contain the new 
+`united_states.txt` file.
+Now we need to update the our forked version.
+To do so we can `push` the changes in our local version to the master branch of our fork, 
+called 'origin'.
 
 ~~~
 $ git push origin master
 ~~~
 {: .bash}
 
-Now you can add your country to repo.
-First copy `united_states.txt` and change the name to the name of your chosen country.
-Then edit the contents to reflect the info of your country.
+Now let's each add a new country to the repository.
+First let's make a new branch to work on.  This will keep our 'master' version
+in sync with the authoritative version of the repository.
+We can name our branch descriptively after the country we will be adding 
+Mine will be `addFrance` since I'll be working with France.
+Please pick a different country and shout it out (or add it to the etherpad) 
+so no one else chooses the same one.
+We will create the branch and switch into in one step 
+as we learned earlier in the branching lesson.
+Finally before we proceed to adding the new file, we will double 
+check that we are on the right branch.
+
+~~~
+$ git checkout -b addFrance
+$ git branch
+~~~
+{: .bash}
+
+~~~
+* addFrance
+  master
+~~~
+{: .output}
+
+Next we will copy `united_states.txt` and change the name to the name of our chosen country.
+Then we can use nano to edit the contents to reflect the info of your chosen country.  
+Hint: You may need to do some internet searching to fill in the information.
 
 ~~~
 $ cp united_states.txt france.txt
@@ -155,7 +201,7 @@ Capitol: Paris
 ~~~
 {: .output}
 
-Next add and commit the changes to the repo.
+Next let's add and commit the changes to the repo.
 
 ~~~
 $ git add france.txt
@@ -164,7 +210,7 @@ $ git commit -m "Added file on france"
 {: .bash}
 
 ~~~
-[master 79a312a] Added file on france
+[addFrance 79a312a] Added file on france
  1 file changed, 2 insertions(+), 2 deletions(-)
 ~~~
 {: .output}
@@ -172,9 +218,10 @@ $ git commit -m "Added file on france"
 Now we can push those changes to our forked version of the repo.
 Since we don't have permissions to the upstream repo or we want to suggest these changed be
 reviewed, if we do have permissions, we won't push directly to the upstream repo.
+Remember we need to push the name of our new branch.
 
 ~~~
-$ git push origin master
+$ git push origin addFrance
 ~~~
 {: .bash}
 
@@ -191,23 +238,40 @@ To https://github.com/USERNAME/countries.git
 {: .output}
 
 Next go to your forked github version of the repo and reload the page.
-You should see the changes in your version of the repo.
+You won't see the new file added in the list of files but you will see 
+that you recently pushed a new branch to the repository.
 
-![](../fig/github_screenshot_origin_wFrance.png)
+![](../fig/github_screenshot_origin_master_addFrance.png)
+
+If you wish to view your new branch you can click on the 'Branch' drop down menu
+and select that branch.
+
+![](../fig/github_screenshot_switch_github_branch.png)
+
+Then you should be able to view the files and commits in that branch.
+
+![](../fig/github_screenshot_origin_master_addFrance.png)
+
+Github already suspects that we are going to want to make a pull request so we can click
+the 'Compare & pull request' button to start a new pull request.
 
 Then click the 'New pull request' button.
 
 ![](../fig/github_screenshot_makingPR1.png)
 
-The base fork should be the upstream version and then the head fork should be your version.
-Then click the 'create pull request button'.
+The base fork should be the upstream/authoritative version's master branch and then 
+the head fork should be the new branch of our fork.
+You can add more information into the comment section if there is anything you'd like 
+to add for the person who reviews your suggestion.
+Then you can click the 'create pull request button' to submit the pull request.
 
 ![](../fig/github_screenshot_makingPR2.png)
 
 Now someone with privileges to the upstream repo can review it, give comments and
 suggestions, and merge it into the upstream version.
 
-Let's add a line to our file and see how/if this changes our pull request.
+Our collaborator reviewing the pull request noticed that 
+we forgot to add the largest city so let's add it and update our pull request.
 
 ~~~
 $ nano france.txt
@@ -223,99 +287,44 @@ Largest City: Paris
 {: .output}
 
 Next we will add and commit these changes.
-Then we will push them to our forked version of the repo.
+Then we can push them to our forked version of the repo.
 
 ~~~
 $ git add france.txt
 $ git commit -m "Added largest city to france file"
-$ git push origin master
+$ git push origin addFrance
 ~~~
 {: .bash}
 
 Now if we reload the pull request.  The new commit was added to that pull request.
+New commits pushed to the same branch are included in the previous pull request.
+If you want to suggest changes separately you need to make separate branches but 
+if you want the changes to be considered together you should put them in the same branch.
 
 ![](../figgithub_screenshot_after_new_commit.png)
 
-This is great for our purposes but you can imagine you may want to suggest changes that
-aren't linked to one another.
-This is one place where branches come in.
-We can put the changes in a different branch and make a separate pull request for that branch.
-Branches can also be useful when you are developing a new function in your script and you
-don't want to 'break' the current version that is published in your repo.
 
-We will use a new branch and pull request to suggest the addition of a second country.
-You can create a branch and then switch to it with the following commands:
-
-~~~
-$ git branch addItaly
-$ git checkout addItaly
-~~~
-{: .bash}
-
-~~~
-Switched to branch 'addItaly'
-~~~
-{: .output}
-
-**OR** you can create the branch and switch to it in one step
-
-~~~
-$ git checkout -b addItaly
-~~~
-{: .bash}
-
-~~~
-Switched to branch 'addItaly'
-~~~
-{: .output}
-
-> ## Add new country file and make PR
+> ## Add new country file and make additional PR
 >
-> - Copy your first country file into a new country
+> - Starting in the master branch make a new branch
+> - Copy other country file into a new country
 > - Edit the file to include info on the new country
 > - Add and commit this new file
 > - Push the new changes to github
 > > ## Solution
 > >
 > > ~~~
-> > $ cp france.txt italy.txt
+> > $ git checkout master
+> > $ git checkout -b addItaly
+> > $ cp united_states.txt italy.txt
 > > $ nano italy.txt #Add the right info into the file
 > > $ git add italy.txt
 > > $ git commit -m "Added file on Italy"
-> > $ git push origin master
+> > $ git push origin addItaly
 > > ~~~
 > > {: .bash}
 > {: .solution}
 {: .challenge}
 
-
-> ## What branches exist
->
-> To see what branches exist of which branch you are on, you can type:
-> 
-> ~~~
-> git branch
-> ~~~
-> {: .bash}
-> ~~~
->   addItaly
-> * master
-> ~~~
-> {: .output}
-{: .callout}
-
-> ## Deleting a branch
->
-> To delete you can type:
-> 
-> ~~~
-> git branch -d add Italy
-> ~~~
-> {: .bash}
-> ~~~
-> Deleted branch addItaly (was 58c24c2).
-> ~~~
-> {: .output}
-{: .callout}
 
 
