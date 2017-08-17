@@ -7,10 +7,10 @@ questions:
 - "How can I work in parallel using branches?"
 objectives:
 - "Understand why branches are useful for:"
-- "working on separate tasks in the same repository concurrently"
-- "trying multiple solutions to a problem"
-- "check-pointing versions of code"
-- "Merge branches back into the master"
+- "*working on separate tasks in the same repository concurrently*"
+- "*trying multiple solutions to a problem*"
+- "*check-pointing versions of code*"
+- "Merge branches back into the master branch"
 keypoints:
 - "Branches can be useful for developing while keeping the main line static."
 ---
