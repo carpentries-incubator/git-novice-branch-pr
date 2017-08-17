@@ -101,10 +101,16 @@ $ git branch
 ~~~
 {: .output}
 
-Before we used the `checkout` command to checkout a commit using
-commit hashs or `HEAD`. This is similar but now give `git checkout`
-the branch name, which is a nickname for the most recent commit in
-that branch.
+Before we used the `checkout` command to checkout a file from a specific commit
+using commit hashes or `HEAD` and the filename (`git checkout HEAD <file>`). The
+`checkout` command can also be used to checkout an entire version of the
+repository, updating all files in the repository to match the state of a desired commit.
+
+Branches allow us to do this using a human-readable name rather than memorizing
+a commit hash. This name also typically gives purpose to the set of changes in
+that branch. When we use the command `git checkout <branch_name>`, we are using
+a nickname to checkout a version of the repository that matches the most recent
+commit in that branch (a.k.a. the HEAD of that branch).
 
 Here you can use `git log` and `ls` to see that the history and 
 files are the same as our `master` branch. This will be true until
