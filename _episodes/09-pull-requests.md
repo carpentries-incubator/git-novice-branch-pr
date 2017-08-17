@@ -4,7 +4,7 @@ teaching: 60
 exercises: 15
 questions:
 - "What are pull requests for?"
-- "How can I make a pull request"
+- "How can I make a pull request?"
 objectives:
 - "Define the terms fork, clone, origin, remote, upstream"
 - "Understand how to make a pull request and what they are useful for"
@@ -50,7 +50,7 @@ and the authoritative version we forked it from.
 First we will **clone** the repo from our forked version.
 The clone command does two things:
 	1. Copies the repo to your local computer
-	2. Sets up a connection called 'origin' between your computer and the github repo
+	2. Sets up a remote called 'origin' between your computer and the github repo
 Copy the web address for your forked version of repo 
 (from the web address line or click 'clone and download' and copy that).
 
@@ -61,7 +61,7 @@ we will place it on our `Desktop`.
 Once there you can use the `clone` command with the link you copied as the first argument.
 
 ~~~
-$ cd Desktop
+$ cd ~/Desktop
 $ git clone https://github.com/USERNAME/countries.git
 ~~~
 {: .bash}
@@ -95,10 +95,11 @@ Copy the web address for this repo
 
 ![](../fig/github_screenshot_upstream_repo.png)
 
-Then back in your terminal, navigate in the cloned repo and add the remote connection.
-For this command we must give the new connection a different nickname, 
-where our original connection is 'origin'
-this new connection will be called 'upstream'.
+Then back in your terminal, navigate into the cloned repo and add the remote 
+connection to this repository.
+For this command we must give the remote a different nickname, 
+where our original remote is 'origin'
+this new remote will be called 'upstream'.
 You could give it a different nickname but 'upstream' is a common nickname for
 the authoritative repository.
 
@@ -233,7 +234,7 @@ Writing objects: 100% (4/4), 783 bytes | 0 bytes/s, done.
 Total 4 (delta 3), reused 0 (delta 0)
 remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
 To https://github.com/USERNAME/countries.git
-   2037539..79a312a  master -> master
+   2037539..79a312a  addFrance -> addFrance
 ~~~
 {: .output}
 
@@ -267,8 +268,11 @@ Then you can click the 'create pull request button' to submit the pull request.
 
 ![](../fig/github_screenshot_makingPR2.png)
 
+
 Now someone with privileges to the upstream repo can review it, give comments and
 suggestions, and merge it into the upstream version.
+In our pull request they can see any messages we left or click and look at the commits that were made and see the files changed.
+We can even explicitly ask someone to review our code by adding them as a reviewer on the left hand side of the window.
 
 Our collaborator reviewing the pull request noticed that 
 we forgot to add the largest city so let's add it and update our pull request.
