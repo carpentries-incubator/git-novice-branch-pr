@@ -296,12 +296,192 @@ $ git push origin addFrance
 ~~~
 {: .bash}
 
+~~~
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 387 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/sstevens2/countries.git
+   31aa2e3..609acfe  addFrance -> addFrance
+~~~
+{: .output}
+
 Now if we reload the pull request.  The new commit was added to that pull request.
 New commits pushed to the same branch are included in the previous pull request.
 If you want to suggest changes separately you need to make separate branches but 
 if you want the changes to be considered together you should put them in the same branch.
 
-![](../figgithub_screenshot_after_new_commit.png)
+![](../fig/github_screenshot_after_new_commit.png)
+
+When working with others we might encounter the conflicts, which we
+learned about earlier in branches.  Let's practice resolving conflicts when working
+collaboratively.
+
+We will continue to work in the `addFrance` branch from before and check we are
+in that branch before we start.
+
+
+~~~
+$ git branch
+~~~
+{: .bash}
+
+~~~
+* addFrance
+  master
+~~~
+{: .output}
+
+
+Next we will each add our country to the existing `README.md` file in the repository in the line directly following the `Countries:` line.
+
+~~~
+$ nano README.md
+$ cat README.md
+~~~
+{: .bash}
+
+~~~
+# countries
+Sandbox for learning PR's in Software Carpentry workshop
+
+Countries:
+France
+~~~
+{: .output}
+
+Next we need to add, commit, and push these requests to our existing pull request.
+
+~~~
+$ git add README.md
+$ git commit -m "Added France to list of countries in README"
+$ git push origin addFrance
+~~~
+{: .bash}
+
+~~~
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 376 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sstevens2/countries.git
+   609acfe..66d7ebf  addFrance -> addFrance
+~~~
+{: .output}
+
+Now if we reload the page we had a pull request we notice that our `addFrance`
+branch is conflicting with upstream's `master` branch.
+This is because someone else edited the same line of the `README.md` file by 
+adding 'United States' where we added 'France'.
+
+![](../fig/github_screenshot_conflicting_PR.png)
+
+It is possible to resolve this conflict in github by clicking the 'Resolve Conflicts' button.
+However we will resolve this conflict locally as we did before with our branches.
+
+First we need to pull down the changes from upstream's `master` branch into our
+`addFrance` branch.
+
+~~~
+$ git pull upstream master
+~~~
+{: .bash}
+
+~~~
+From https://github.com/McMahonLab/countries
+ * branch            master     -> FETCH_HEAD
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+~~~
+{: .output}
+
+
+From the conflict error message we can see the conflict is in `README.md` or by running `git status` and seeing the 'both modified' status.
+
+~~~
+$ git status
+~~~
+{: .bash}
+
+~~~
+On branch addFrance
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+~~~
+{: .output}
+
+Now we will resolve the conflict by editing the `README.md` file to contain both 
+'United States' and 'France' and none of the additional lines git added to
+indicate conflict
+
+~~~
+$ nano README.md
+$ cat README.md
+~~~
+{: .bash}
+
+~~~
+# countries
+Sandbox for ComBEE github workshop on PR's
+
+Countries:
+France
+United States
+~~~
+{: .output}
+
+Then we add and commit our resolved conflict.
+
+
+~~~
+$ git add README.md
+$ git commit -m "Resolved conflict in readme w two countries"
+~~~
+{: .bash}
+
+~~~
+[addFrance 912317b] Resolved conflict in readme w two countries
+~~~
+{: .output}
+
+Finally we can update the pull request by pushing these changes to our github 
+version of the repository.
+
+~~~
+$ git push origin addFrance
+~~~
+{: .bash}
+
+~~~
+git push origin addFrance
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 732 bytes | 0 bytes/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/sstevens2/countries.git
+   66d7ebf..912317b  addFrance -> addFrance
+~~~
+{: .output}
+
+Now if we reload our browser we will see that the new commit is in the pull 
+request and it has no conflicts with the base branch.
+
+![](../fig/github_screenshot_resolved_PR_conflict.png)
+
+Now the owner/administrator/manager of the authoritative repo can review our pull requests and decide to incorporate them.
 
 
 > ## Add new country file and make additional PR
