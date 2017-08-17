@@ -26,7 +26,7 @@ This is the default branch created when initializing a repository and
 is often considered to be the "clean" or "working" version of a
 repository's code.
 
-We can what branches exist in a repository by typing
+We can see what branches exist in a repository by typing
 
 ~~~
 $ git branch
@@ -102,8 +102,9 @@ $ git branch
 {: .output}
 
 Before we used the `checkout` command to checkout a commit using
-commit hashs or `HEAD`. This is similar but now we have given our most
-recent commit in the branch a name, the branch name.
+commit hashs or `HEAD`. This is similar but now give `git checkout`
+the branch name, which is a nickname for the most recent commit in
+that branch.
 
 Here you can use `git log` and `ls` to see that the history and 
 files are the same as our `master` branch. This will be true until
@@ -191,14 +192,14 @@ $ git log --oneline
 ~~~
 {: .bash}
 
-And we see that our `analysis.py` file and respecitve commit have been
+And we see that our `analysis.py` file and respective commit have been
 preserved in the `pythondev` branch.
 
 Now we can repeat the process for our bash script in a branch called
 `bashdev`.
 
 First we must checkout the `master` branch again. New branches will
-include the entire history of up to the current commit, and we'd like
+include the entire history up to the current commit, and we'd like
 to keep these two tasks separate.
 
 ~~~
@@ -302,7 +303,7 @@ Fast-forward
 ~~~
 {: .output}
 
-Now that we've merged the `pythondev` into `master`, these changes now
+Now that we've merged the `pythondev` into `master`, these changes
 exist in both branches. This could be confusing in the future if we
 stumble upon the `pythondev` branch again.
 
