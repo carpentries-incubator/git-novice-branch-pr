@@ -103,7 +103,7 @@ $ git branch
 
 Before we used the `checkout` command to checkout a file from a specific commit
 using commit hashes or `HEAD` and the filename (`git checkout HEAD <file>`). The
-`checkout` command can also be used to checkout an entire version of the
+`checkout` command can also be used to checkout an entire previous version of the
 repository, updating all files in the repository to match the state of a desired commit.
 
 Branches allow us to do this using a human-readable name rather than memorizing
