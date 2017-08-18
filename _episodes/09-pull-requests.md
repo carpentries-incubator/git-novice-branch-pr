@@ -133,8 +133,8 @@ upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (push)
 ~~~
 {: .output}
 
-Now that we have this setup done, which is only needed the first time, 
-we can now suggest changes to this repo.
+Now that we have this setup done we will be able to suggest 
+changes to this repo using a pull request.
 Each person will add a new file with info about a new country in it.
 
 The instructor will now add a single file to the repository containing 
