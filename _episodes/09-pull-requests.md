@@ -228,12 +228,14 @@ $ git commit -m "Added file on france"
 ~~~
 {: .output}
 
-Now we can push those changes to our forked version of the repo.
-In some cases we may not have permission to push directly to the 
-upstream repo or we might like our changes to be reviewed regardless 
-of permissions, so we won't push directly to the upstream repository. 
-Instead we will push the name of our new branch to the remote linked 
-to our fork, `origin`.
+In some cases we may not have permission to push changes directly to the 
+upstream/authoritative repo or we might like our changes to be reviewed regardless 
+of permissions, so we'll create a `pull request`. 
+A `pull request` is a **request** for a member of the upstream repository to **pull** 
+our changes into the upstream repository from a `fork`, allowing them to request further 
+changes/improvements and make comments on the changes before doing so. 
+In order to create a `pull request`, we must push our new branch containing the
+ changes we'd like to submit to the remote linked to our fork, `origin`, on GitHub.
 
 ~~~
 $ git push origin addFrance
