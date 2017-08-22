@@ -522,6 +522,7 @@ Now the owner/administrator/manager of the authoritative repo can review our pul
 > - Edit the file to include info on the new country
 > - Add and commit this new file
 > - Push the new changes to github
+>
 > > ## Solution
 > >
 > > ~~~
