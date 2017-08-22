@@ -69,7 +69,7 @@ $ git clone https://github.com/USERNAME/countries.git
 > ## Why does the command above say 'USERNAME'?
 >
 > So that we can't copy the command above and accidently clone someone else's
-> version of countries to our computer the command above uses the placeholder
+> version of countries to our computer, the command above uses the placeholder
 > 'USERNAME' where you should put your own username if your copied from above
 > instead of copying the link from your browser and pasting it into the command.
 > 
@@ -140,8 +140,10 @@ Each person will add a new file with info about a new country in it.
 The instructor will now add a single file to the repository containing 
 information about the the United States.
 
-Next, we will update our local version of the repo, with this change by `pull`ing down
-the changes from the 'upstream' version's master branch.
+Next, we will update our local version of the repo to include the new file.
+We use a command called `pull` to bring these changes to our local repository.
+We must specify the remote and branch we want to pull from, in this case the 
+`upstream` remote's `master` branch.
 
 ~~~
 $ git pull upstream master
@@ -152,7 +154,7 @@ Now your local version of the repo is updated but our forked version of the
 repo is not yet up to date.
 You can reload your fork in github and see it does not contain the new 
 `united_states.txt` file.
-Now we need to update the our forked version.
+Now we need to update our forked version.
 To do so we can `push` the changes in our local version to the master branch of our fork, 
 called 'origin'.
 
@@ -164,17 +166,27 @@ $ git push origin master
 Now let's each add a new country to the repository.
 First let's make a new branch to work on.  This will keep our 'master' version
 in sync with the authoritative version of the repository.
-We can name our branch descriptively after the country we will be adding 
+We can name our branch descriptively after the country we will be adding.
 Mine will be `addFrance` since I'll be working with France.
 Please pick a different country and shout it out (or add it to the etherpad) 
 so no one else chooses the same one.
 We will create the branch and switch into in one step 
 as we learned earlier in the branching lesson.
+
+~~~
+$ git checkout -b addFrance
+~~~
+{: .bash}
+
+~~~
+Switched to a new branch 'addFrance'
+~~~
+{: .output}
+
 Finally before we proceed to adding the new file, we will double 
 check that we are on the right branch.
 
 ~~~
-$ git checkout -b addFrance
 $ git branch
 ~~~
 {: .bash}
@@ -217,9 +229,11 @@ $ git commit -m "Added file on france"
 {: .output}
 
 Now we can push those changes to our forked version of the repo.
-Since we don't have permissions to the upstream repo or we want to suggest these changed be
-reviewed, if we do have permissions, we won't push directly to the upstream repo.
-Remember we need to push the name of our new branch.
+In some cases we may not have permission to push directly to the 
+upstream repo or we might like our changes to be reviewed regardless 
+of permissions, so we won't push directly to the upstream repository. 
+Instead we will push the name of our new branch to the remote linked 
+to our fork, `origin`.
 
 ~~~
 $ git push origin addFrance
@@ -256,8 +270,6 @@ Then you should be able to view the files and commits in that branch.
 Github already suspects that we are going to want to make a pull request so we can click
 the 'Compare & pull request' button to start a new pull request.
 
-Then click the 'New pull request' button.
-
 ![](../fig/github_screenshot_makingPR1.png)
 
 The base fork should be the upstream/authoritative version's master branch and then 
@@ -291,7 +303,7 @@ Largest City: Paris
 {: .output}
 
 Next we will add and commit these changes.
-Then we can push them to our forked version of the repo.
+Then we can push them to our fork of the repo.
 
 ~~~
 $ git add france.txt
@@ -311,7 +323,8 @@ To https://github.com/sstevens2/countries.git
 ~~~
 {: .output}
 
-Now if we reload the pull request.  The new commit was added to that pull request.
+If we reload the pull request, we'll see that the new commit was added to the 
+pull request and the changes have been automatically updated.
 New commits pushed to the same branch are included in the previous pull request.
 If you want to suggest changes separately you need to make separate branches but 
 if you want the changes to be considered together you should put them in the same branch.
@@ -360,6 +373,16 @@ Next we need to add, commit, and push these requests to our existing pull reques
 ~~~
 $ git add README.md
 $ git commit -m "Added France to list of countries in README"
+~~~
+{: .bash}
+
+~~~
+[addFrance 66d7ebf] Added France to list of countries in README
+ 1 file changed, 1 insertions(+), 1 deletions(-)
+~~~
+{: .output}
+
+~~~
 $ git push origin addFrance
 ~~~
 {: .bash}
@@ -383,8 +406,10 @@ adding 'United States' where we added 'France'.
 
 ![](../fig/github_screenshot_conflicting_PR.png)
 
-It is possible to resolve this conflict in github by clicking the 'Resolve Conflicts' button.
-However we will resolve this conflict locally as we did before with our branches.
+In this case, it is possible to resolve this conflict in github by 
+clicking the 'Resolve Conflicts' button.
+However, we will reuse the skills we learned earlier to resolve this conflict locally,
+as we did in our branching conflict.
 
 First we need to pull down the changes from upstream's `master` branch into our
 `addFrance` branch.
@@ -460,7 +485,7 @@ $ git commit -m "Resolved conflict in readme w two countries"
 {: .output}
 
 Finally we can update the pull request by pushing these changes to our github 
-version of the repository.
+fork of the repository.
 
 ~~~
 $ git push origin addFrance
