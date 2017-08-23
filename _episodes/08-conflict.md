@@ -297,3 +297,43 @@ consider one of these approaches to reducing them:
 - Clarify who is responsible for what areas with your collaborators
 - Discuss what order tasks should be carried out in with your collaborators so
   that tasks that will change the same file won't be worked on at the same time
+
+> ## Create a conflict between branches and resolve it
+>
+> - Create a new branch off of the master branch
+> - Make a change to a file in the master branch
+> - Change to the new branch
+> - Make a change to the same line in the same file
+> - Change back to the master branch
+> - Merge the new branch into the master branch
+> - Address the resulting conflict in the text editor of your choice
+>
+> > ## Solution
+> >
+> > ~~~
+> > # to make sure we're starting in the master branch
+> > $ git checkout master 
+> > # create a new branch, but don't change into it
+> > $ git branch new_branch 
+> > # make a change to the file
+> > $ nano mars.txt 
+> > # add changes in mars.txt to the staging area
+> > $ git add mars.txt 
+> > $ git commit -m "Small change to mars.txt"
+> > # switch to the new branch
+> > $ git checkout new_branch 
+> > # make a change to mars.txt on the same line
+> > $ nano mars.txt 
+> > # add changes in mars.txt to the staging area
+> > $ git add mars.txt 
+> > $ git commit -m "Another change to mars.txt"
+> > # change back to the master branch
+> > $ git checkout master 
+> > # attempt to merge the branches
+> > $ git merge new_branch 
+> > # address conflicts by removing `<<<`, `===`, and `>>>` lines leaving the desired changes intact
+> > $ nano mars.txt 
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
