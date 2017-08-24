@@ -40,8 +40,8 @@ $ git branch marsTemp
 ~~~
 {: .bash}
 
-But before we make changes related to Mars' temperature,
-let's add a line to Mars.txt.
+But before we make changes related to Mars' temperature in the `marsTemp`
+branch, let's add a line to Mars.txt here in the `master` branch.
 
 ~~~
 $ nano mars.txt
@@ -66,12 +66,27 @@ $ git commit -m "Add a line about the daylight on Mars."
 {: .bash}
 
 ~~~
-[master 5ae9631] Add a line in our home copy
+[master 5ae9631] Add a line about the daylight on Mars.
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
-Now that we're done with that, let's get to work on our comments about
+We can then examine the commit history of the `master` branch.
+
+~~~
+$ git log --oneline
+~~~
+{: .bash}
+
+~~~
+5ae9631 Add a line about the daylight on Mars.
+005937f Discuss concerns about Mars' climate for Mummy
+34961b1 Add concerns about effects of Mars' moons on Wolfman
+f22b25e Start notes on Mars as a base
+~~~
+{: .output}
+
+Now that we've made our changes in the `master` branch, let's get to work on our comments about
 the temperature in the `marsTemp` branch.
 
 ~~~
@@ -86,7 +101,9 @@ $ git branch
 ~~~
 {: .output}
 
-Let's make a note in `mars.txt` about the temperature
+Let's make a note in `mars.txt` about the temperature. Note that when we open
+this file the line we added about the daylight on Mars will not be present as
+that change is not part of this branch.
 
 ~~~
 $ nano mars.txt
@@ -111,12 +128,31 @@ $ git commit -m "Add a line about the temperature on Mars"
 {: .bash}
 
 ~~~
-[master 07ebc69] Add a line in my copy
+[master 07ebc69] Add a line about the temperature on Mars
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
-Great, now that we've added changes about the temperature
+Again, we can look at the history of this branch.
+
+~~~
+$ git log --oneline
+~~~
+{: .bash}
+
+~~~
+07ebc69 Add a line about the temperature on Mars
+005937f Discuss concerns about Mars' climate for Mummy
+34961b1 Add concerns about effects of Mars' moons on Wolfman
+f22b25e Start notes on Mars as a base
+~~~
+{: .output}
+
+> Notice that the commit related to Mars' daylight is not present as it is part of
+> the `master` branch, not the `marsTemp` branch.
+{: .callout}
+
+Now that we've added changes about the temperature
 we can merge them into the `master` branch. First, let's checkout the
 `master` branch.
 
@@ -132,7 +168,7 @@ $ git branch
 ~~~
 {: .output}
 
-And then merge the changes from `marsTemp`
+And then merge the changes from `marsTemp` into our current branch, `master`.
 
 ~~~
 $ git merge marsTemp
@@ -173,24 +209,27 @@ But the Mummy will appreciate the lack of humidity
 I'll be able to get 40 extra minutes of beauty rest
 =======
 Yeti will appreciate the cold
->>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
+>>>>>>> 07ebc69c450e8475aee9b14b4383acc99f42af1d
 ~~~
 {: .output}
 
-Our change—the one in `HEAD`—is preceded by `<<<<<<<`.
+Our change—the one at the `HEAD` of the `master` branch—is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of the content downloaded from GitHub with `>>>>>>>`.
+and marked the end of our commit from the `marsTemp` branch with `>>>>>>>`.
 (The string of letters and digits after that marker
-identifies the commit we've just downloaded.)
+identifies the commit we made in the `marsTemp` branch.)
 
 It is now up to us to edit this file to remove these markers
 and reconcile the changes.
-We can do anything we want: keep the change made in the local repository, keep
-the change made in the remote repository, write something new to replace both,
+We can do anything we want: keep the change made in the `master` branch, keep
+the change made in the `marsTemp` branch, write something new to replace both,
 or get rid of the change entirely.
-Let's replace both so that the file looks like this:
+
+Let's replace both of the comments about Mar's daylight and the temperature
+along with the conflict identifiers so that the file looks like this:
 
 ~~~
+$ nano mars.txt
 $ cat mars.txt
 ~~~
 {: .bash}
@@ -236,8 +275,9 @@ $ git commit -m "Merge changes from marsTemp"
 {: .output}
 
 Git keeps track of what we've merged with what,
-so we don't have to fix things by hand again. If
-we make another change to the `marsTemp` branch
+so we don't have to fix things by hand again.
+
+Let's make another change to the `marsTemp` branch:
 
 ~~~
 $ git checkout marsTemp
@@ -292,10 +332,9 @@ correctly. If you find yourself resolving a lot of conflicts in a project,
 consider one of these approaches to reducing them:
 
 - Try breaking large files apart into smaller files so that it is less
-  likely that two authors will be working in the same file at the same time
-- Clarify who is responsible for what areas with your collaborators
-- Discuss what order tasks should be carried out in with your collaborators so
-  that tasks that will change the same file won't be worked on at the same time
+  likely that you will be working in the same file at the same time
+  in different branches
+- Create branches focused on separable tasks so that your work won't overlap in files
 
 > ## Create a conflict between branches and resolve it
 >
@@ -306,6 +345,7 @@ consider one of these approaches to reducing them:
 > - Change back to the master branch
 > - Merge the new branch into the master branch
 > - Address the resulting conflict in the text editor of your choice
+> - Add the file containing the conflict and commit conflict resolution to the repository
 >
 > > ## Solution
 > >
@@ -331,7 +371,9 @@ consider one of these approaches to reducing them:
 > > # attempt to merge the branches
 > > $ git merge new_branch 
 > > # address conflicts by removing `<<<`, `===`, and `>>>` lines leaving the desired changes intact
-> > $ nano mars.txt 
+> > $ nano mars.txt
+> > $ git add mars.txt
+> > $ git commit -m "Resolving conflict in mars.txt."
 > > ~~~
 > > {: .bash}
 > {: .solution}
