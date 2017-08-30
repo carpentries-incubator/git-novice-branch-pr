@@ -201,6 +201,106 @@ synchronized.  However, if there were changes in the GitHub remote repository
 that were not present in our current repository, this command would download
 them to our local repository.
 
+To demonstrate this, let's make a bare repository in a new directory.
+
+~~~
+$ cd ..
+$ mkdir new_repository
+$ cd new_repository
+$ git init
+~~~
+{: .bash}
+
+~~~
+Initialized empty Git repository in <your_directory_here>
+~~~
+{: .output}
+
+Now we can add the GitHub repository as a remote of this new repository
+
+~~~
+$ git remote add origin https://github.com/vlad/planets.git
+~~~
+{: .bash}
+
+Next we will pull all changes in the remote repository down into our freshly made 
+repository on our machine
+
+~~~
+$ git pull origin master
+~~~
+{: .bash}
+
+~~~
+remote: Counting objects: 5453, done.
+remote: Total 5453 (delta 0), reused 0 (delta 0), pack-reused 5453
+Receiving objects: 100% (5453/5453), 6.83 MiB | 1.87 MiB/s, done.
+Resolving deltas: 100% (3386/3386), done.
+From https://github.com/vlad/planets.git
+ * [new branch]      master   -> origin/master
+~~~
+{: .output}
+
+So we have now updated the master branche of our new repository to match
+the master branch of the GitHub repository which we can confirm by examining the git log. 
+
+~~~
+git log --oneline
+~~~
+
+~~~
+5ae9631 Add a line about the daylight on Mars.
+005937f Discuss concerns about Mars' climate for Mummy
+34961b1 Add concerns about effects of Mars' moons on Wolfman
+f22b25e Start notes on Mars as a base
+2abf2b1 Merge changes from marsTemp
+~~~
+{: .output}
+
+Finally, there is an very handy Git command called `clone`. In one step this command
+can bring us to the current state of our freshly made repository. Let's create a
+new directory outside of our current repository and try this command. 
+
+~~~
+$ cd ..
+$ mkdir clone_test
+$ cd clone_test
+$ git clone https://github.com/vlad/planets.git
+~~~
+{: .bash}
+
+~~~
+Cloning into 'planets'...
+remote: Counting objects: 5646, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5646 (delta 0), reused 1 (delta 0), pack-reused 5642
+Receiving objects: 100% (5646/5646), 6.95 MiB | 2.65 MiB/s, done.
+Resolving deltas: 100% (3478/3478), done.
+Checking connectivity... done.
+~~~
+{: .output}
+
+This has done all three of the steps we performed separately above in one go: 
+
+  1. initialize a bare repository
+  2. add the GitHub repository as a remote called `origin`
+  3. pull down the changes of the `master` branch into our new repository
+
+Again, we can verify this using the git log command.
+
+~~~
+git log --oneline
+~~~
+
+~~~
+5ae9631 Add a line about the daylight on Mars.
+005937f Discuss concerns about Mars' climate for Mummy
+34961b1 Add concerns about effects of Mars' moons on Wolfman
+f22b25e Start notes on Mars as a base
+2abf2b1 Merge changes from marsTemp
+~~~
+{: .output}
+
 > ## GitHub GUI
 >
 > Browse to your `planets` repository on GitHub.
