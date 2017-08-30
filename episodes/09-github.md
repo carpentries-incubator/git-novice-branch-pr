@@ -197,8 +197,9 @@ Already up-to-date.
 {: .output}
 
 Pulling has no effect in this case because the two repositories are already
-synchronized.  If someone else had pushed some changes to the repository on
-GitHub, though, this command would download them to our local repository.
+synchronized.  However, if there were changes in the GitHub remote repository
+that were not present in our current repository, this command would download
+them to our local repository.
 
 > ## GitHub GUI
 >
