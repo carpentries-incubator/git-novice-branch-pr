@@ -262,7 +262,7 @@ Finally, there is an very handy Git command called `clone`
 This command will perform all of the steps above in one line: 
 
   1. make a new directory with the repository's name
-  2. initialize a bare repository
+  2. initialize an empty repository
   3. add the GitHub repository as a remote called `origin`
   4. pull down the changes of the `master` branch into our new repository
 
