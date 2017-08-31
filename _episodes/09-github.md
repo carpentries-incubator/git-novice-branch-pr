@@ -201,10 +201,10 @@ synchronized.  However, if there were changes in the GitHub remote repository
 that were not present in our current repository, this command would download
 them to our local repository.
 
-To demonstrate this, let's make a bare repository in a new directory.
+To demonstrate this, let's make an empty repository in a new directory.
 
 ~~~
-$ cd ..
+$ cd ~/Desktop
 $ mkdir new_repository
 $ cd new_repository
 $ git init
@@ -212,7 +212,7 @@ $ git init
 {: .bash}
 
 ~~~
-Initialized empty Git repository in <your_directory_here>
+Initialized empty Git repository in new_repository
 ~~~
 {: .output}
 
@@ -241,7 +241,7 @@ From https://github.com/vlad/planets.git
 ~~~
 {: .output}
 
-So we have now updated the master branche of our new repository to match
+So we have now updated the master branch of our new repository to match
 the master branch of the GitHub repository which we can confirm by examining the git log. 
 
 ~~~
@@ -257,12 +257,19 @@ f22b25e Start notes on Mars as a base
 ~~~
 {: .output}
 
-Finally, there is an very handy Git command called `clone`. In one step this command
-can bring us to the current state of our freshly made repository. Let's create a
-new directory outside of our current repository and try this command. 
+Finally, there is an very handy Git command called `clone`
+
+This command will perform all of the steps above in one line: 
+
+  1. initialize a bare repository
+  2. add the GitHub repository as a remote called `origin`
+  3. pull down the changes of the `master` branch into our new repository
+
+
+Let's create a new directory outside of our current repository and try this command. 
 
 ~~~
-$ cd ..
+$ cd ~/Desktop
 $ mkdir clone_test
 $ cd clone_test
 $ git clone https://github.com/vlad/planets.git
@@ -280,13 +287,8 @@ Checking connectivity... done.
 ~~~
 {: .output}
 
-This has done all three of the steps we performed separately above in one go: 
 
-  1. initialize a bare repository
-  2. add the GitHub repository as a remote called `origin`
-  3. pull down the changes of the `master` branch into our new repository
-
-Again, we can verify this using the git log command.
+Again, we can verify that our repo is up to date using the git log command.
 
 ~~~
 git log --oneline
