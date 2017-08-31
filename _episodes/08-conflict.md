@@ -225,8 +225,8 @@ We can do anything we want: keep the change made in the `master` branch, keep
 the change made in the `marsTemp` branch, write something new to replace both,
 or get rid of the change entirely.
 
-Let's replace both of the comments about Mar's daylight and the temperature
-along with the conflict identifiers so that the file looks like this:
+Let's keep both of these statements, as they are both valid regarding the Martian
+environment.
 
 ~~~
 $ nano mars.txt
@@ -238,7 +238,8 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We removed the conflict on this line
+I'll be able to get 40 extra minutes of beauty rest
+Yeti will appreciate the cold
 ~~~
 {: .output}
 
@@ -319,7 +320,8 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We removed the conflict on this line
+I'll be able to get 40 extra minutes of beauty rest
+Yeti will appreciate the cold
 The polar caps will probably be Yeti's home
 ~~~
 {: .output}
