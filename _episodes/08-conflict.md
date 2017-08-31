@@ -314,6 +314,16 @@ Fast-forward
 
 There is no conflict and our changes are added automatically
 
+>> ## Still seeing a conflict?
+>
+> This exercise is dependent on how the merge conflict was resolved
+> in our first merge of the marsTemp branch and may still result
+> in a conflict when merging additional commits from the marsTemp branch.
+>
+>
+{: .callout}
+
+
 ~~~
 $ cat mars.txt
 ~~~
