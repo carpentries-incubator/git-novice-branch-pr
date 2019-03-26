@@ -32,7 +32,7 @@ in your browser window.
 > This is to be expected because this will differ depending on 
 > what organization your instructor used to setup the `countries` repo.
 > 
-> You will also see your username where the 'sstevens2' is in the picutres.
+> You will also see your username where the 'sstevens2' is in the pictures.
 > 
 {: .callout}
 
@@ -49,10 +49,12 @@ and the authoritative version we forked it from.
 
 First we will **clone** the repo from our forked version.
 The clone command does two things:
-	1. Copies the repo to your local computer
-	2. Sets up a remote called 'origin' between your computer and the github repo
+
+1. Copies the repo to your local computer
+2. Sets up a remote called 'origin' between your computer and the github repo
+
 Copy the web address for your forked version of repo 
-(from the web address line or click 'clone and download' and copy that).
+(from the web address line or click 'Clone and download' and copy that).
 
 ![](../fig/github_screenshot_cloneOrigin.png)
 
@@ -68,7 +70,7 @@ $ git clone https://github.com/USERNAME/countries.git
 
 > ## Why does the command above say 'USERNAME'?
 >
-> So that we can't copy the command above and accidently clone someone else's
+> So that we can't copy the command above and accidentally clone someone else's
 > version of countries to our computer, the command above uses the placeholder
 > 'USERNAME' where you should put your own username if your copied from above
 > instead of copying the link from your browser and pasting it into the command.
@@ -210,7 +212,7 @@ $ cat france.txt
 
 ~~~
 Population: 66,991,000
-Capitol: Paris
+Capital: Paris
 ~~~
 {: .output}
 
@@ -286,7 +288,6 @@ Then you can click the 'create pull request button' to submit the pull request.
 Now someone with privileges to the upstream repo can review it, give comments and
 suggestions, and merge it into the upstream version.
 In our pull request they can see any messages we left or click and look at the commits that were made and see the files changed.
-We can even explicitly ask someone to review our code by adding them as a reviewer on the left hand side of the window.
 
 Our collaborator reviewing the pull request noticed that 
 we forgot to add the largest city so let's add it and update our pull request.
@@ -299,7 +300,7 @@ $ cat france.txt
 
 ~~~
 Population: 66,991,000
-Capitol: Paris
+Capital: Paris
 Largest City: Paris
 ~~~
 {: .output}
@@ -320,7 +321,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 387 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/sstevens2/countries.git
+To https://github.com/USERNAME/countries.git
    31aa2e3..609acfe  addFrance -> addFrance
 ~~~
 {: .output}
@@ -396,7 +397,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 376 bytes | 0 bytes/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/sstevens2/countries.git
+To https://github.com/USERNAME/countries.git
    609acfe..66d7ebf  addFrance -> addFrance
 ~~~
 {: .output}
@@ -502,7 +503,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 732 bytes | 0 bytes/s, done.
 Total 6 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 1 local object.
-To https://github.com/sstevens2/countries.git
+To https://github.com/USERNAME/countries.git
    66d7ebf..912317b  addFrance -> addFrance
 ~~~
 {: .output}
