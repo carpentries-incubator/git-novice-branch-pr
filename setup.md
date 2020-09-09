@@ -212,12 +212,4 @@ the text below accordingly.
   </div>
 </div>
 
-We'll do our work in the `Desktop` folder so make sure you change your working directory to it with:
-
-~~~
-$ cd
-$ cd Desktop
-~~~
-{: .bash}
-
 [workshop-setup]: https://swcarpentry.github.io/workshop-template/#git
