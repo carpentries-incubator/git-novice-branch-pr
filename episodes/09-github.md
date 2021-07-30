@@ -289,9 +289,11 @@ Checking connectivity... done.
 {: .output}
 
 
-Again, we can verify that our repo is up to date using the git log command.
+Again, we can change into the `planets` directory and verify that our repo is 
+up to date using the git log command.
 
 ~~~
+cd planets
 git log --oneline
 ~~~
 
