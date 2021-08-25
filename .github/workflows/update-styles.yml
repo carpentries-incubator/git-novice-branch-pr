@@ -84,6 +84,6 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request
           labels: "type:template and tools"
           # NOTE: This tag is repository-specific
-          team-reviewers: swc-extension-python-maintainers
+          team-reviewers: git-novice-branch-pr-maintainers
           draft: false
 
