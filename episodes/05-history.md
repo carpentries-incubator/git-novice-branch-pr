@@ -197,7 +197,7 @@ $ git status
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -253,7 +253,7 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
+# On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 # Changes not staged for commit:
@@ -287,7 +287,7 @@ $ git checkout HEAD mars.txt
 > to revert `mars.txt` to its state after the commit `f22b25e`.
 > If you forget `mars.txt` in that command, Git will tell you that "You are in
 > 'detached HEAD' state." In this state, you shouldn't make any changes.
-> You can fix this by reattaching your head using ``git checkout master``
+> You can fix this by reattaching your head using ``git checkout main``
 {: .callout}
 
 It's important to remember that
