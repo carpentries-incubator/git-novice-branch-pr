@@ -30,7 +30,7 @@ $ git status
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -75,7 +75,7 @@ $ git status
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -98,7 +98,7 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
+# On branch main
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -128,7 +128,7 @@ $ git status --ignored
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
