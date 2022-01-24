@@ -43,7 +43,7 @@ $ git branch marsTemp
 {: .bash}
 
 But before we make changes related to Mars' temperature in the `marsTemp`
-branch, let's add a line to Mars.txt here in the `master` branch.
+branch, let's add a line to Mars.txt here in the `main` branch.
 
 ~~~
 $ nano mars.txt
@@ -59,7 +59,7 @@ I'll be able to get 40 extra minutes of beauty rest
 ~~~
 {: .output}
 
-and commit that change to the `master` branch
+and commit that change to the `main` branch
 
 ~~~
 $ git add mars.txt
@@ -68,12 +68,12 @@ $ git commit -m "Add a line about the daylight on Mars."
 {: .bash}
 
 ~~~
-[master 5ae9631] Add a line about the daylight on Mars.
+[main 5ae9631] Add a line about the daylight on Mars.
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
-We can then examine the commit history of the `master` branch.
+We can then examine the commit history of the `main` branch.
 
 ~~~
 $ git log --oneline
@@ -88,7 +88,7 @@ f22b25e Start notes on Mars as a base
 ~~~
 {: .output}
 
-Now that we've made our changes in the `master` branch, let's get to work on our comments about
+Now that we've made our changes in the `main` branch, let's get to work on our comments about
 the temperature in the `marsTemp` branch.
 
 ~~~
@@ -99,7 +99,7 @@ $ git branch
 
 ~~~
 * marsTemp
-  master
+  main
 ~~~
 {: .output}
 
@@ -130,7 +130,7 @@ $ git commit -m "Add a line about the temperature on Mars"
 {: .bash}
 
 ~~~
-[master 07ebc69] Add a line about the temperature on Mars
+[main 07ebc69] Add a line about the temperature on Mars
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -151,26 +151,26 @@ f22b25e Start notes on Mars as a base
 {: .output}
 
 > Notice that the commit related to Mars' daylight is not present as it is part of
-> the `master` branch, not the `marsTemp` branch.
+> the `main` branch, not the `marsTemp` branch.
 {: .callout}
 
 Now that we've added changes about the temperature
-we can merge them into the `master` branch. First, let's checkout the
-`master` branch.
+we can merge them into the `main` branch. First, let's checkout the
+`main` branch.
 
 ~~~
-$ git checkout master
+$ git checkout main
 $ git branch
 ~~~
 {: .bash}
 
 ~~~
   marsTemp
-* master
+* main
 ~~~
 {: .output}
 
-And then merge the changes from `marsTemp` into our current branch, `master`.
+And then merge the changes from `marsTemp` into our current branch, `main`.
 
 ~~~
 $ git merge marsTemp
@@ -178,7 +178,7 @@ $ git merge marsTemp
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
 
@@ -216,7 +216,7 @@ Yeti will appreciate the cold
 {: .output}
 
 
-Our change—the one at the `HEAD` of the `master` branch—is preceded by `<<<<<<<`.
+Our change—the one at the `HEAD` of the `main` branch—is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of our commit from the `marsTemp` branch with `>>>>>>>`.
 (The string of letters and digits after that marker
@@ -224,7 +224,7 @@ identifies the commit we made in the `marsTemp` branch.)
 
 It is now up to us to edit this file to remove these markers
 and reconcile the changes.
-We can do anything we want: keep the change made in the `master` branch, keep
+We can do anything we want: keep the change made in the `main` branch, keep
 the change made in the `marsTemp` branch, write something new to replace both,
 or get rid of the change entirely.
 
@@ -257,7 +257,7 @@ $ git status
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
@@ -274,7 +274,7 @@ $ git commit -m "Merge changes from marsTemp"
 {: .bash}
 
 ~~~
-[master 2abf2b1] Merge changes from marsTemp
+[main 2abf2b1] Merge changes from marsTemp
 ~~~
 {: .output}
 
@@ -292,15 +292,15 @@ $ git commit -m "A note about Yeti's home"
 {: .bash}
 
 ~~~
-[master 34avo82] A note about Yeti's home
+[main 34avo82] A note about Yeti's home
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
-And merge that change into master
+And merge that change into main
 
 ~~~
-$ git checkout master
+$ git checkout main
 $ git merge marsTemp
 ~~~
 
@@ -347,7 +347,7 @@ correctly. If you find yourself resolving a lot of conflicts in a project,
 consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
-- Use topic branches to segregate work, merging to master when complete
+- Use topic branches to segregate work, merging to main when complete
 - Make smaller more atomic commits
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
@@ -365,20 +365,20 @@ Conflicts can also be minimized with project management strategies:
 
 > ## Create a conflict between branches and resolve it
 >
-> - Create a new branch off of the master branch
-> - Make a change to a file in the master branch
+> - Create a new branch off of the main branch
+> - Make a change to a file in the main branch
 > - Change to the new branch
 > - Make a change to the same line in the same file
-> - Change back to the master branch
-> - Merge the new branch into the master branch
+> - Change back to the main branch
+> - Merge the new branch into the main branch
 > - Address the resulting conflict in the text editor of your choice
 > - Add the file containing the conflict and commit conflict resolution to the repository
 >
 > > ## Solution
 > >
 > > ~~~
-> > # to make sure we're starting in the master branch
-> > $ git checkout master 
+> > # to make sure we're starting in the main branch
+> > $ git checkout main 
 > > # create a new branch, but don't change into it
 > > $ git branch new_branch 
 > > # make a change to the file
@@ -393,8 +393,8 @@ Conflicts can also be minimized with project management strategies:
 > > # add changes in mars.txt to the staging area
 > > $ git add mars.txt 
 > > $ git commit -m "Another change to mars.txt"
-> > # change back to the master branch
-> > $ git checkout master 
+> > # change back to the main branch
+> > $ git checkout main 
 > > # attempt to merge the branches
 > > $ git merge new_branch 
 > > # address conflicts by removing `<<<`, `===`, and `>>>` lines leaving the desired changes intact
