@@ -87,7 +87,7 @@ permalink: /setup/
 	  </li>
         </ol>
         <p>This will provide you with both Git and Bash in the Git Bash program.</p>
-        <p>If you already have git installed, running the installer will upgrade to the newest verison, currently 2.35.1.2. When you launch the installer, ensure "Only show new options" is <strong>unchecked</strong>. This will allow you to ensure you're using the same settings we use in the workshop. If you check the box, the installer will only asking you about settings related to new features since you last installed. Contact the workshop instructor if you have any questions.    
+        <p>If you already have git installed, running the installer will upgrade to the newest verison, currently 2.35.1.2. When you launch the installer, ensure "Only show new options" is <strong>unchecked</strong>. This will allow you to ensure you're using the same settings we use in the workshop. If you check the box, the installer will only asking you about settings related to new features since you last installed. Contact the workshop instructor if you have any questions.</p>    
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
