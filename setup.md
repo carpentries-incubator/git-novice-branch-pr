@@ -33,7 +33,7 @@ permalink: /setup/
                   From the dropdown menu select "Use the nano editor by default" and click on "Next".
               </li>
               <li>
-                Select "Override the default branch name for new repositories" and leave it set to `main`. Click on "Next".
+                Select "Override the default branch name for new repositories" and leave it set to <code>main</code>. Click on "Next".
               </li>
               <li>
                 Ensure that "Git from the command line and also from 3rd-party software" is selected and
@@ -87,15 +87,14 @@ permalink: /setup/
 	  </li>
         </ol>
         <p>This will provide you with both Git and Bash in the Git Bash program.</p>
+        <p>If you already have git installed, running the installer will upgrade to the newest verison, currently 2.35.1.2. When you launch the installer, ensure "Only show new options" is <strong>unchecked</strong>. This will allow you to ensure you're using the same settings we use in the workshop. If you check the box, the installer will only asking you about settings related to new features since you last installed. Contact the workshop instructor if you have any questions.    
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
           The default shell in some versions of macOS is Bash, and
-	  Bash is available in all versions, so no need to install anything.
-	  You access Bash from the Terminal (found in
-	  <code>/Applications/Utilities</code>).
-          See the Git installation <a href="#shell-macos-video-tutorial">video tutorial</a>
-          for an example on how to open the Terminal.
+	        Bash is available in all versions, so no need to install anything.
+	         You access Bash from the Terminal (found in
+	          <code>/Applications/Utilities</code>).
           You may want to keep Terminal in your dock for this workshop.
         </p>
         <p>
