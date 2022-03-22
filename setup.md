@@ -19,6 +19,7 @@ permalink: /setup/
     </ul>
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="shell-windows">
+        <p>Windows users will install a bash shell called Git Bash when installing git following the instructions below:</p>
         <ol>
           <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
           <li>Run the installer and follow the steps below:
