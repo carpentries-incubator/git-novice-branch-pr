@@ -17,7 +17,6 @@ permalink: /setup/
       <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="shell-windows">
         <ol>
@@ -48,7 +47,7 @@ permalink: /setup/
 		            Select "Use the native Windows Secure Channel library" and click on "Next".
 	            </li>
               {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
-                                 with their own root CA are still able to access remote git repos. {% endcomment %}
+              with their own root CA are still able to access remote git repos. {% endcomment %}
               {% comment %} Configuring the line ending conversions {% endcomment %}
               <li>
                 Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
@@ -155,7 +154,6 @@ the text below accordingly.
       <li role="presentation"><a data-os="macos" href="#git-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#git-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="git-windows">
         <p>
