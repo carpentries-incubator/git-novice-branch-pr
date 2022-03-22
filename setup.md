@@ -89,12 +89,6 @@ permalink: /setup/
 	  </li>
         </ol>
         <p>This will provide you with both Git and Bash in the Git Bash program.</p>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/339AEqk9c-8?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
@@ -116,12 +110,6 @@ permalink: /setup/
           If you want to change your default shell, see <a href="https://support.apple.com/en-au/HT208050" rel="noopener">
           this Apple Support article</a> and follow the instructions on "How to change your default shell".
         </p>
-        <h4 id="shell-macos-video-tutorial">Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/9LQhwETCdwY?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-linux">
         <p>
@@ -193,12 +181,6 @@ the text below accordingly.
           most recent available installer labelled "snow-leopard"
           <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
         </p>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-          <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/9LQhwETCdwY?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="git-linux">
         <p>
