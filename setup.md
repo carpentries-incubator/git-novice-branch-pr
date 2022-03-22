@@ -24,29 +24,29 @@ permalink: /setup/
           <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
           <li>Run the installer and follow the steps below:
             <ol>
-              {% comment %} Git 2.27.0 Setup {% endcomment %}
+              {% comment %} Git 2.35.1.2 Setup {% endcomment %}
               <li>
-                Click on "Next" four times (two times if you've previously
-                installed Git).  You don't need to change anything
-                in the Information, location, components, and start menu screens.
+                Click on "Next" to accept the license agreement, again to accept the default installation path, again to select the default components, and a fourth time to name a start menu folder.
+                (If you have git installed already, see the note below.)
               </li>
               <li>
-                <strong>
                   From the dropdown menu select "Use the nano editor by default" and click on "Next".
-                </strong>
               </li>
-              {% comment %} Adjusting your PATH environment {% endcomment %}
+              <li>
+                Select "Override the default branch name for new repositories" and leave it set to `main`. Click on "Next".
+              </li>
               <li>
                 Ensure that "Git from the command line and also from 3rd-party software" is selected and
                 click on "Next". (If you don't do this Git Bash will not work properly, requiring you to
                 remove the Git Bash installation, re-run the installer and to select the "Git from the
                 command line and also from 3rd-party software" option.)
               </li>
-              {% comment %} Choosing the SSH executable {% endcomment %}
-              {% comment %} Choosing HTTPS transport backend {% endcomment %}
               <li>
-		Ensure that "Use the native Windows Secure Channel library" is selected and click on "Next".
-	      </li>
+                Select "Use bundled OpenSSH" and click on "Next".
+              </li>
+              <li>
+		            Select "Use the native Windows Secure Channel library" and click on "Next".
+	            </li>
               {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
                                  with their own root CA are still able to access remote git repos. {% endcomment %}
               {% comment %} Configuring the line ending conversions {% endcomment %}
@@ -55,23 +55,21 @@ permalink: /setup/
               </li>
               {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
               <li>
-                <strong>
                   Ensure that "Use Windows' default console window" is selected and click on "Next".
-                </strong>
               </li>
               {% comment %} Configuring extra options {% endcomment %}
               <li>
-		Ensure that "Default (fast-forward or merge) is selected and click "Next"
+		            Ensure that "Default (fast-forward or merge) is selected and click "Next"
               </li>
               <li>
-		Ensure that "Enable file system caching" and "Enable Git Credential Manager" are selected
-		and click on "Next".
+                Ensure that "Get Crediential Manager" is selected and click on "Next".
               </li>
-              {% comment %} Configuring experimental options {% endcomment %}
-              <li>Click on "Install".</li>
-              {% comment %} Installing {% endcomment %}
-              {% comment %} Completing the Git Setup Wizard {% endcomment %}
-              {% comment %} as of 2020-06-02, the Window will say "click Finish", but the button is labelled as "Next" {% endcomment %}
+              <li>
+                Ensure that "Enable file system caching" is checked and click on "Next".
+              </li>
+              <li>
+                Do not enable either of the "experimental options". Click "Install".
+              </li>
               <li>Click on "Finish" or "Next".</li>
             </ol>
           </li>
