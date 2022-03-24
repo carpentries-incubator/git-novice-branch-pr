@@ -17,61 +17,59 @@ permalink: /setup/
       <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="shell-windows">
+        <p>Windows users will install a bash shell called Git Bash when installing git following the instructions below:</p>
         <ol>
           <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
           <li>Run the installer and follow the steps below:
             <ol>
-              {% comment %} Git 2.27.0 Setup {% endcomment %}
+              {% comment %} Git 2.35.1.2 Setup {% endcomment %}
               <li>
-                Click on "Next" four times (two times if you've previously
-                installed Git).  You don't need to change anything
-                in the Information, location, components, and start menu screens.
+                Click on "Next" to accept the license agreement, again to accept the default installation path, again to select the default components, and a fourth time to name a start menu folder.
+                (If you have git installed already, see the note below.)
               </li>
               <li>
-                <strong>
                   From the dropdown menu select "Use the nano editor by default" and click on "Next".
-                </strong>
               </li>
-              {% comment %} Adjusting your PATH environment {% endcomment %}
+              <li>
+                Select "Override the default branch name for new repositories" and leave it set to <code>main</code>. Click on "Next".
+              </li>
               <li>
                 Ensure that "Git from the command line and also from 3rd-party software" is selected and
                 click on "Next". (If you don't do this Git Bash will not work properly, requiring you to
                 remove the Git Bash installation, re-run the installer and to select the "Git from the
                 command line and also from 3rd-party software" option.)
               </li>
-              {% comment %} Choosing the SSH executable {% endcomment %}
-              {% comment %} Choosing HTTPS transport backend {% endcomment %}
               <li>
-		Ensure that "Use the native Windows Secure Channel library" is selected and click on "Next".
-	      </li>
+                Select "Use bundled OpenSSH" and click on "Next".
+              </li>
+              <li>
+		            Select "Use the native Windows Secure Channel library" and click on "Next".
+	            </li>
               {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
-                                 with their own root CA are still able to access remote git repos. {% endcomment %}
+              with their own root CA are still able to access remote git repos. {% endcomment %}
               {% comment %} Configuring the line ending conversions {% endcomment %}
               <li>
                 Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
               </li>
               {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
               <li>
-                <strong>
                   Ensure that "Use Windows' default console window" is selected and click on "Next".
-                </strong>
               </li>
               {% comment %} Configuring extra options {% endcomment %}
               <li>
-		Ensure that "Default (fast-forward or merge) is selected and click "Next"
+		            Ensure that "Default (fast-forward or merge) is selected and click "Next"
               </li>
               <li>
-		Ensure that "Enable file system caching" and "Enable Git Credential Manager" are selected
-		and click on "Next".
+                Ensure that "Get Crediential Manager" is selected and click on "Next".
               </li>
-              {% comment %} Configuring experimental options {% endcomment %}
-              <li>Click on "Install".</li>
-              {% comment %} Installing {% endcomment %}
-              {% comment %} Completing the Git Setup Wizard {% endcomment %}
-              {% comment %} as of 2020-06-02, the Window will say "click Finish", but the button is labelled as "Next" {% endcomment %}
+              <li>
+                Ensure that "Enable file system caching" is checked and click on "Next".
+              </li>
+              <li>
+                Do not enable either of the "experimental options". Click "Install".
+              </li>
               <li>Click on "Finish" or "Next".</li>
             </ol>
           </li>
@@ -89,21 +87,14 @@ permalink: /setup/
 	  </li>
         </ol>
         <p>This will provide you with both Git and Bash in the Git Bash program.</p>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/339AEqk9c-8?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
+        <p>If you already have git installed, running the installer will upgrade to the newest verison, currently 2.35.1.2. When you launch the installer, ensure "Only show new options" is <strong>unchecked</strong>.</p>    
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
           The default shell in some versions of macOS is Bash, and
-	  Bash is available in all versions, so no need to install anything.
-	  You access Bash from the Terminal (found in
-	  <code>/Applications/Utilities</code>).
-          See the Git installation <a href="#shell-macos-video-tutorial">video tutorial</a>
-          for an example on how to open the Terminal.
+	        Bash is available in all versions, so no need to install anything.
+	         You access Bash from the Terminal (found in
+	          <code>/Applications/Utilities</code>).
           You may want to keep Terminal in your dock for this workshop.
         </p>
         <p>
@@ -116,12 +107,6 @@ permalink: /setup/
           If you want to change your default shell, see <a href="https://support.apple.com/en-au/HT208050" rel="noopener">
           this Apple Support article</a> and follow the instructions on "How to change your default shell".
         </p>
-        <h4 id="shell-macos-video-tutorial">Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/9LQhwETCdwY?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-linux">
         <p>
@@ -170,7 +155,6 @@ the text below accordingly.
       <li role="presentation"><a data-os="macos" href="#git-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#git-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="git-windows">
         <p>
@@ -193,12 +177,6 @@ the text below accordingly.
           most recent available installer labelled "snow-leopard"
           <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
         </p>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-          <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/9LQhwETCdwY?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="git-linux">
         <p>
