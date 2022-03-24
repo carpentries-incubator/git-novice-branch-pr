@@ -145,10 +145,10 @@ information about the the United States.
 Next, we will update our local version of the repo to include the new file.
 We use a command called `pull` to bring these changes to our local repository.
 We must specify the remote and branch we want to pull from, in this case the 
-`upstream` remote's `master` branch.
+`upstream` remote's `main` branch.
 
 ~~~
-$ git pull upstream master
+$ git pull upstream main
 ~~~
 {: .bash}
 
@@ -157,16 +157,16 @@ repo is not yet up to date.
 You can reload your fork in github and see it does not contain the new 
 `united_states.txt` file.
 Now we need to update our forked version.
-To do so we can `push` the changes in our local version to the master branch of our fork, 
+To do so we can `push` the changes in our local version to the main branch of our fork, 
 called 'origin'.
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .bash}
 
 Now let's each add a new country to the repository.
-First let's make a new branch to work on.  This will keep our 'master' version
+First let's make a new branch to work on.  This will keep our 'main' version
 in sync with the authoritative version of the repository.
 We can name our branch descriptively after the country we will be adding.
 Mine will be `addFrance` since I'll be working with France.
@@ -195,7 +195,7 @@ $ git branch
 
 ~~~
 * addFrance
-  master
+  main
 ~~~
 {: .output}
 
@@ -276,7 +276,7 @@ the 'Compare & pull request' button to start a new pull request.
 
 ![](../fig/github_screenshot_makingPR1.png)
 
-The base fork should be the upstream/authoritative version's master branch and then 
+The base fork should be the upstream/authoritative version's main branch and then 
 the head fork should be the new branch of our fork.
 You can add more information into the comment section if there is anything you'd like 
 to add for the person who reviews your suggestion.
@@ -349,7 +349,7 @@ $ git branch
 
 ~~~
 * addFrance
-  master
+  main
 ~~~
 {: .output}
 
@@ -403,7 +403,7 @@ To https://github.com/USERNAME/countries.git
 {: .output}
 
 Now if we reload the page we had a pull request we notice that our `addFrance`
-branch is conflicting with upstream's `master` branch.
+branch is conflicting with upstream's `main` branch.
 This is because someone else edited the same line of the `README.md` file by 
 adding 'United States' where we added 'France'.
 
@@ -414,17 +414,17 @@ clicking the 'Resolve Conflicts' button.
 However, we will reuse the skills we learned earlier to resolve this conflict locally,
 as we did in our branching conflict.
 
-First we need to pull down the changes from upstream's `master` branch into our
+First we need to pull down the changes from upstream's `main` branch into our
 `addFrance` branch.
 
 ~~~
-$ git pull upstream master
+$ git pull upstream main
 ~~~
 {: .bash}
 
 ~~~
 From https://github.com/McMahonLab/countries
- * branch            master     -> FETCH_HEAD
+ * branch            main     -> FETCH_HEAD
 Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
@@ -518,7 +518,7 @@ Now the owner/administrator/manager of the authoritative repo can review our pul
 
 > ## Add new country file and make additional PR
 >
-> - Starting in the master branch make a new branch
+> - Starting in the main branch make a new branch
 > - Copy other country file into a new country
 > - Edit the file to include info on the new country
 > - Add and commit this new file
@@ -527,7 +527,7 @@ Now the owner/administrator/manager of the authoritative repo can review our pul
 > > ## Solution
 > >
 > > ~~~
-> > $ git checkout master
+> > $ git checkout main
 > > $ git checkout -b addItaly
 > > $ cp united_states.txt italy.txt
 > > $ nano italy.txt #Add the right info into the file
