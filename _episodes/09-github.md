@@ -9,7 +9,6 @@ objectives:
 - "Push to or pull from a remote repository."
 keypoints:
 - "A local Git repository can be connected to one or more remote repositories."
-- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
 - "`git push` copies changes from a local repository to a remote repository."
 - "`git pull` copies changes from a remote repository to a local repository."
 ---
@@ -66,8 +65,7 @@ Click on the 'SSH' link to change the [protocol]({{ page.root }}{% link referenc
 > ## HTTPS vs. SSH
 >
 > We use SSH here because, while it requires some additional configuration, it is a 
-> security protocol widely used by many applications.  The steps below describe SSH at a 
-> minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup 
+> security protocol widely used by many applications.   A supplemental episode to this lesson discusses advanced setup 
 > and concepts of SSH and key pairs, and other material supplemental to git related SSH. 
 {: .callout}
 
