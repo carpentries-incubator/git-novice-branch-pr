@@ -290,6 +290,20 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI
 ~~~
 {: .output}
 
+> ## Copy and paste in the unix shell
+> Have you tried to use your usual keyboard hotkeys for Copy and Paste in the Unix shell and found they didn't work? 
+> 
+> If you're using GitBash in Windows, you can copy and paste using your mouse.
+> Highlight the text you want to copy, then right click and select `copy`.
+> Similarly for paste, right click at the prompt and select `paste`. 
+> 
+> On Windows in GitBash, you can use `ctrl + INSERT` to copy and `Shift + INSERT` to paste.
+> 
+> For many users on a mac, the `cmd + c` and `cmd + v` work as expected in Terminal.
+> 
+> Linux terminals will vary by distro, but try `Shift + ctrl + c` and `Shift + ctrl + v` in Bash.
+{: .callout}
+
 Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click "Settings," then on the 
 settings page, click "SSH and GPG keys," on the left side "Account settings" menu.  Click the "New SSH key" button on the right side. Now, 
 you can add the title (Dracula uses the title "Vlad's Lab Laptop" so he can remember where the original key pair
