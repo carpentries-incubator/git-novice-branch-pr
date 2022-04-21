@@ -189,8 +189,9 @@ $ ssh-keygen -t ed25519 -C "vlad@tran.sylvan.ia"
 ~~~
 {: .language-bash}
 
-If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
-`$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+> ## Ed25519 algorithm on legacy system
+> If you are using a legacy system that doesn’t support the Ed25519 algorithm, use: $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+{: .callout}
 
 ~~~
 Generating public/private ed25519 key pair.
@@ -207,6 +208,8 @@ Enter passphrase (empty for no passphrase):
 {: .output}
 
 Now, it is prompting Dracula for a passphrase.  Since he is using his lab’s laptop that other people sometimes have access to, he wants to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option. 
+
+Note: The unix shell won't show anything when you type in your password, not even placeholders!
 
 ~~~
 Enter same passphrase again:
