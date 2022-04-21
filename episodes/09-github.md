@@ -85,7 +85,7 @@ Click on the 'SSH' link to change the [protocol]({{ page.root }}{% link referenc
 > security protocol widely used by many applications. Recall that we set up SSH
 > in the setup episode. 
 {: .callout}
-
+  
 ![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
 
 Copy that URL from the browser, go into the local `planets` repository, and run
