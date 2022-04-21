@@ -190,45 +190,4 @@ the text below accordingly.
   </div>
 </div>
 
-<div id="github">
-  <h3>GitHub Authentication with SSH</h3>
-  <p>
-    TODO: Introductory Paragraph Here.
-  </p>
-  <p>
-    You will need an account at <a href="https://github.com/">github.com</a>
-    for parts of the Git lesson. Basic GitHub accounts are free. We encourage
-    you to create a GitHub account if you don't have one already.
-    Please consider what personal information you'd like to reveal. For
-    example, you may want to review these
-    <a href="https://help.github.com/articles/keeping-your-email-address-private/">instructions
-      for keeping your email address private</a> provided at GitHub.
-  </p>
-
-  <div>
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#git-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#git-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#git-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
-    </ul>
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="github-windows">
-        <p>
-          TODO: Windows instructions for GitHub SSH setup
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="github-macos">
-        <p>
-          TODO: MacOS instructions for GitHub SSH setup
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="github-linux">
-        <p>
-          TODO: Linux instructions for GitHub SSH setup
-        </p>
-      </article>
-    </div>
-  </div>
-</div>
-
 [workshop-setup]: https://swcarpentry.github.io/workshop-template/#git
