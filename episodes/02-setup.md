@@ -322,26 +322,6 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
 
-Now that authentication is setup, we can return to the remote.  This command will push the changes from
-our local repository to the repository on GitHub:
-
-~~~
-$ git push origin main
-~~~
-{: .bash}
-
-~~~
-Counting objects: 9, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 821 bytes, done.
-Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
- * [new branch]      main -> main
-Branch main set up to track remote branch main from origin.
-~~~
-{: .output}
-
 > ## Proxy
 >
 > If the network you are connected to uses a proxy, there is a chance that your
