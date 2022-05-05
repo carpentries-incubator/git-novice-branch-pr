@@ -121,7 +121,7 @@ talking about how they might be used for collaboration.
 
 ## 3. Push local changes to a remote
 
-Now that authentication is setup, we can return to the remote.  This command will push the changes from
+This command will push the changes from
 our local repository to the repository on GitHub:
 
 ~~~
