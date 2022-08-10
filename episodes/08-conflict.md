@@ -314,7 +314,7 @@ Fast-forward
 
 There is no conflict and our changes are added automatically
 
->> ## Still seeing a conflict?
+> ## Still seeing a conflict?
 >
 > This exercise is dependent on how the merge conflict was resolved
 > in our first merge of the marsTemp branch and may still result
@@ -347,7 +347,7 @@ correctly. If you find yourself resolving a lot of conflicts in a project,
 consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
-- Use topic branches to segregate work, merging to main when complete
+- Use topic branches to separate work, merging to main when complete
 - Make smaller more atomic commits
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
@@ -361,6 +361,7 @@ Conflicts can also be minimized with project management strategies:
 - Clarify who is responsible for what areas with your collaborators
 - Discuss what order tasks should be carried out in with your collaborators so
   that tasks that will change the same file won't be worked on at the same time
+
 
 
 > ## Create a conflict between branches and resolve it
