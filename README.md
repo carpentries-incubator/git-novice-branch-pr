@@ -7,6 +7,6 @@ Please see <https://carpentries-incubator.github.io/git-novice-branch-pr> for a 
 Maintainers:
 
 * [Sarah Stevens](https://github.com/sstevens2/)
-* [Christina Koch][https://github.com/ChristinaLK]
+* [Christina Koch](https://github.com/ChristinaLK)
 * [Stephen Appel](https://github.com/srappel)
 
