@@ -2,16 +2,11 @@ git-novice
 ==========
 
 An introduction to version control for novices using Git.
-Please see <https://swcarpentry.github.io/git-novice/> for a rendered version of this material,
-[the lesson template documentation][lesson-example]
-for instructions on formatting, building, and submitting material,
-or run `make` in this directory for a list of helpful commands.
-
+This is an alternate lesson based on <https://swcarpentry.github.io/git-novice/> that teaches branches and pull requests.
+Please see <https://carpentries-incubator.github.io/git-novice-branch-pr> for a rendered version of this material.
 Maintainers:
 
-* [Ivan Gonzalez][gonzalez_ivan]
-* [Daisie Huang][huang_daisie]
+* [Sarah Stevens](https://github.com/sstevens2/)
+* [Christina Koch][https://github.com/ChristinaLK]
+* [Stephen Appel](https://github.com/srappel)
 
-[gonzalez_ivan]: https://software-carpentry.org/team/#gonzalez_ivan
-[huang_daisie]: https://software-carpentry.org/team/#huang_daisie
-[lesson-example]: https://swcarpentry.github.io/lesson-example
