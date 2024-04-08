@@ -249,7 +249,7 @@ on it for many hours.
 ~~~
 $ touch analysis.sh
 $ git add analysis.sh
-$ git commit –m “Wrote and tested bash analysis script”
+$ git commit –m "Wrote and tested bash analysis script"
 ~~~
 {: .bash}
 
