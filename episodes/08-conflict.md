@@ -178,6 +178,20 @@ $ git merge marsTemp
 {: .bash}
 
 ~~~
+Auto-merging mars.txt
+CONFLICT (content): Merge conflict in mars.txt
+Automatic merge failed; fix conflicts and then commit the result.
+~~~
+{: .output}
+
+Review the status of the repository now that we've been told merging has resulted in a conflict.
+
+~~~
+$ git status
+~~~
+{: .bash}
+
+~~~
 On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
