@@ -2,14 +2,19 @@
 title: Hosting
 teaching: 10
 exercises: 0
-questions:
-- "Where should I host my version control repositories?"
-objectives:
-- "Explain different options for hosting scientific work."
-keypoints:
-- "Projects can be hosted on university servers, on personal domains, or on public forges."
-- "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain different options for hosting scientific work.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- Where should I host my version control repositories?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The second big question for groups that want to open up their work is where to
 host their code and data.  One option is for the lab, the department, or the
@@ -42,7 +47,7 @@ communities already using the same service.
 
 As an example, Software Carpentry [is on
 GitHub]({{ swc_github }}) where you can find the [source for this
-page]({{page.root}}/_episodes/13-hosting.md).
+page](13-hosting.md).
 Anyone with a GitHub account can suggest changes to this text.
 
 GitHub repositories can also be assigned DOIs, [by connecting its releases to
@@ -60,28 +65,49 @@ situations, there is much less setup and maintenance involved with using an
 online service.  Furthermore, such tools are often provided free of charge to
 open source projects, and are also available for private repositories for a fee.
 
-> ## Institutional Barriers
->
-> Sharing is the ideal for science,
-> but many institutions place restrictions on sharing,
-> for example to protect potentially patentable intellectual property.
-> If you encounter such restrictions,
-> it can be productive to inquire about the underlying motivations and
-> either to request an exception for a specific project or domain,
-> or to push more broadly for institutional reform to support more open science.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-> ## Can My Work Be Public?
->
-> Find out whether you are allowed to host your work openly on a public forge.
-> Can you do this unilaterally,
-> or do you need permission from someone in your institution?
-> If so, who?
-{: .challenge}
+## Institutional Barriers
 
-> ## Where Can I Share My Work?
->
-> Does your institution have a repository or repositories that you can
-> use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](https://arxiv.org/), [figshare](https://figshare.com/), [GitHub](https://github.com/) or [GitLab](https://about.gitlab.com/)?
-{: .challenge}
+Sharing is the ideal for science,
+but many institutions place restrictions on sharing,
+for example to protect potentially patentable intellectual property.
+If you encounter such restrictions,
+it can be productive to inquire about the underlying motivations and
+either to request an exception for a specific project or domain,
+or to push more broadly for institutional reform to support more open science.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Can My Work Be Public?
+
+Find out whether you are allowed to host your work openly on a public forge.
+Can you do this unilaterally,
+or do you need permission from someone in your institution?
+If so, who?
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Where Can I Share My Work?
+
+Does your institution have a repository or repositories that you can
+use to share your papers, data and software? How do institutional repositories
+differ from services like [arXiV](https://arxiv.org/), [figshare](https://figshare.com/), [GitHub](https://github.com/) or [GitLab](https://about.gitlab.com/)?
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Projects can be hosted on university servers, on personal domains, or on public forges.
+- Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
