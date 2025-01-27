@@ -20,7 +20,7 @@ carpentry: 'incubator'
 title: 'Version Control with Git'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 
+created: 2013-11-02 
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries'
