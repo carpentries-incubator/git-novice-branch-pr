@@ -55,7 +55,13 @@
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/aio.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/images.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/index.html</loc>
@@ -115,16 +121,34 @@
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/key-points.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/git-novice-branch-pr/profiles.html</loc>
