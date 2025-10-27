@@ -282,7 +282,7 @@ $ git commit -m "A note about Yeti's home"
 ```
 
 ```output
-[main 34avo82] A note about Yeti's home
+[marsTemp 34avo82] A note about Yeti's home
  1 file changed, 1 insertion(+)
 ```
 
