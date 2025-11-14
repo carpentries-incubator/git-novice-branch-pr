@@ -343,41 +343,6 @@ git branch -D bashdev
 Deleted branch bashdev (was 2n779ds).
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Reverting a Commit
-
-Jennifer is collaborating on her Python script with her colleagues and
-realizes her last commit to the group repository is wrong and wants to
-undo it.  Jennifer needs to undo correctly so everyone in the group
-repository gets the correct change.  `git revert [wrong commit ID]`
-will make a new commit that undoes Jennifer's previous wrong
-commit. `git revert` is different than `git switch [commit ID]` and also different from `git restore [commit ID] . `.
-
-- `git revert [commit ID]` adds a new "undo" commit to the current branch.
- (HEAD moves to that commit which is now the tip of the current branch).
-- `git switch [commit ID]` will change HEAD to be to the commit ID.
-  You end up in a "detached HEAD" state meeaning not on any branch at that commit.
-  It does not undo the commit in any way.
-- `git restore [commit ID] .`  Puts the files in the current directory (`.`) with
-  the state they were in at `[commit ID]` into the staging area. It does not
-  make any changes to your current branch or to HEAD.
-
-Jennifer to use `git revert`, what is the missing command?
-
-1. \_\_\_\_\_\_\_\_ # Look at the git history of the project to find the commit ID
-
-2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
-
-3. `git revert [commit ID]`
-
-4. Type in the new commit message.
-
-5. Save and close
-  
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Branches can be useful for developing while keeping the main line static.
