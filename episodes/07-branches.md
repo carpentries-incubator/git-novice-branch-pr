@@ -84,11 +84,11 @@ On branch main
 nothing to commit, working directory clean
 ```
 
-To switch to our new branch we can use the `checkout` command
+To switch to our new branch we can use the `switch` command
 we learned earlier and check our work with `git branch`.
 
 ```bash
-$ git checkout pythondev
+$ git switch pythondev
 $ git branch
 ```
 
@@ -97,18 +97,37 @@ $ git branch
 * pythondev
 ```
 
-Before we used the `checkout` command to checkout a file from a specific commit
-using commit hashes or `HEAD` and the filename (`git checkout HEAD <file>`). The
-`checkout` command can also be used to checkout an entire previous version of the
+Before we used the `restore` command to look at a file from a specific commit
+using commit hashes or `HEAD` and the filename (`git restore HEAD <file>`). The
+`switch` command can be used to change our head to an entire previous version of the
 repository, updating all files in the repository to match the state of a desired commit.
 
 Branches allow us to do this using a human-readable name rather than memorizing
 a commit hash. This name also typically gives purpose to the set of changes in
-that branch. When we use the command `git checkout <branch_name>`, we are using
-a nickname to checkout a version of the repository that matches the most recent
+that branch. When we use the command `git switch <branch_name>`, we are using
+a nickname to switch to a version of the repository that matches the most recent
 commit in that branch (a.k.a. the HEAD of that branch).
 
-Here you can use `git log` and `ls` to see that the history and
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Don't Lose Your HEAD
+
+If you run `git switch` with a commit instead of a branch, Git will tell you that "You are in
+'detached HEAD' state." In this state, you shouldn't make any changes.
+You can fix this by reattaching your head using `git switch main`
+
+```bash
+$ git switch f22b25e
+```
+
+```bash
+$ git switch main
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Now that we are on the `pythondev` branch, we can use `git log` and `ls` to see that the history and
 files are the same as our `main` branch. This will be true until
 some changes are committed to our new branch.
 
@@ -145,7 +164,7 @@ As expected, we see our commit in the log.
 Now let's switch back to the `main` branch.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -170,7 +189,7 @@ remains in the `pythondev` branch. We can confirm this by moving back
 to that branch.
 
 ```bash
-$ git checkout pythondev
+$ git switch pythondev
 $ git branch
 ```
 
@@ -190,12 +209,12 @@ preserved in the `pythondev` branch.
 Now we can repeat the process for our bash script in a branch called
 `bashdev`.
 
-First we must checkout the `main` branch again. New branches will
+First we must switch to the `main` branch again. New branches will
 include the entire history up to the current commit, and we'd like
 to keep these two tasks separate.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -207,10 +226,10 @@ $ git branch
 This time let's create and switch two the `bashdev` branch
 in one command.
 
-We can do so by adding the `-b` flag to checkout.
+We can do so by adding the `-c` flag to switch.
 
 ```bash
-$ git checkout -b bashdev
+$ git switch -c bashdev
 $ git branch
 ```
 
@@ -257,7 +276,7 @@ the current branch.
 First we must switch to the branch we're merging changes into, `main`.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -323,6 +342,41 @@ git branch -D bashdev
 ```output
 Deleted branch bashdev (was 2n779ds).
 ```
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Reverting a Commit
+
+Jennifer is collaborating on her Python script with her colleagues and
+realizes her last commit to the group repository is wrong and wants to
+undo it.  Jennifer needs to undo correctly so everyone in the group
+repository gets the correct change.  `git revert [wrong commit ID]`
+will make a new commit that undoes Jennifer's previous wrong
+commit. `git revert` is different than `git switch [commit ID]` and also different from `git restore [commit ID] . `.
+
+- `git revert [commit ID]` adds a new "undo" commit to the current branch.
+ (HEAD moves to that commit which is now the tip of the current branch).
+- `git switch [commit ID]` will change HEAD to be to the commit ID.
+  You end up in a "detached HEAD" state meeaning not on any branch at that commit.
+  It does not undo the commit in any way.
+- `git restore [commit ID] .`  Puts the files in the current directory (`.`) with
+  the state they were in at `[commit ID]` into the staging area. It does not
+  make any changes to your current branch or to HEAD.
+
+Jennifer to use `git revert`, what is the missing command?
+
+1. \_\_\_\_\_\_\_\_ # Look at the git history of the project to find the commit ID
+
+2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
+
+3. `git revert [commit ID]`
+
+4. Type in the new commit message.
+
+5. Save and close
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
