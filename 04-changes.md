@@ -218,7 +218,7 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore -- <file>..." to discard changes in working directory)
 
 	modified:   mars.txt
 
@@ -277,7 +277,7 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore -- <file>..." to discard changes in working directory)
 
 	modified:   mars.txt
 

@@ -38,7 +38,7 @@ But the Mummy will appreciate the lack of humidity
 ```
 
 Let's create a new branch for discussing Mars' temperature and
-checkout that branch.
+switch to that branch.
 
 ```bash
 $ git branch marsTemp
@@ -88,7 +88,7 @@ Now that we've made our changes in the `main` branch, let's get to work on our c
 the temperature in the `marsTemp` branch.
 
 ```bash
-$ git checkout marsTemp
+$ git switch marsTemp
 $ git branch
 ```
 
@@ -147,11 +147,11 @@ the `main` branch, not the `marsTemp` branch.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Now that we've added changes about the temperature
-we can merge them into the `main` branch. First, let's checkout the
+we can merge them into the `main` branch. First, let's switch to the
 `main` branch.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -275,7 +275,7 @@ so we don't have to fix things by hand again.
 Let's make another change to the `marsTemp` branch:
 
 ```bash
-$ git checkout marsTemp
+$ git switch marsTemp
 $ echo "The polar caps will probably be Yeti's home" >> mars.txt
 $ git add mars.txt
 $ git commit -m "A note about Yeti's home"
@@ -289,7 +289,7 @@ $ git commit -m "A note about Yeti's home"
 And merge that change into main branch
 
 ```
-$ git checkout main
+$ git switch main
 $ git merge marsTemp
 ```
 
@@ -367,7 +367,7 @@ Conflicts can also be minimized with project management strategies:
 
 ```bash
 # to make sure we're starting in the main branch
-$ git checkout main 
+$ git switch main 
 # create a new branch, but don't change into it
 $ git branch new_branch 
 # make a change to the file
@@ -376,14 +376,14 @@ $ nano mars.txt
 $ git add mars.txt 
 $ git commit -m "Small change to mars.txt"
 # switch to the new branch
-$ git checkout new_branch 
+$ git switch new_branch 
 # make a change to mars.txt on the same line
 $ nano mars.txt 
 # add changes in mars.txt to the staging area
 $ git add mars.txt 
 $ git commit -m "Another change to mars.txt"
 # change back to the main branch
-$ git checkout main 
+$ git switch main 
 # attempt to merge the branches
 $ git merge new_branch 
 # address conflicts by removing `<<<`, `===`, and `>>>` lines leaving the desired changes intact
