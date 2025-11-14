@@ -178,7 +178,7 @@ We will create the branch and switch into in one step
 as we learned earlier in the branching lesson.
 
 ```bash
-$ git checkout -b addFrance
+$ git switch -c addFrance
 ```
 
 ```output
@@ -495,8 +495,8 @@ Now the owner/administrator/manager of the authoritative repo can review our pul
 ## Solution
 
 ```bash
-$ git checkout main
-$ git checkout -b addItaly
+$ git switch main
+$ git switch -c addItaly
 $ cp united_states.txt italy.txt
 $ nano italy.txt #Add the right info into the file
 $ git add italy.txt

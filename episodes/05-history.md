@@ -188,7 +188,7 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore -- <file>..." to discard changes in working directory)
 
 	modified:   mars.txt
 
@@ -196,10 +196,20 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 We can put things back the way they were
-by using `git checkout`:
+by using `git restore`:
+
+::::::::::::::::::::::::::::::: instructor
+
+`git restore` and `git switch` were introduced in git 2.23.0 to separate
+the previous `git checkout` functionality into two commands.
+`git switch` updates HEAD to referenced commit. `git restore`
+is used to pull changes into the staging area (often file by file)
+without updating HEAD.
+
+::::::::::::::::::::::::::::::::::::::::::
 
 ```bash
-$ git checkout HEAD mars.txt
+$ git restore HEAD mars.txt
 $ cat mars.txt
 ```
 
@@ -210,7 +220,7 @@ But the Mummy will appreciate the lack of humidity
 ```
 
 As you might guess from its name,
-`git checkout` checks out (i.e., restores) an old version of a file.
+`git restore` restores an old version of a file.
 In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved commit.
@@ -218,7 +228,7 @@ If we want to go back even further,
 we can use a commit identifier instead:
 
 ```bash
-$ git checkout f22b25e mars.txt
+$ git restore f22b25e mars.txt
 ```
 
 ```bash
@@ -239,7 +249,7 @@ Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
+#   (use "git restore -- <file>..." to discard changes in working directory)
 #
 #	modified:   mars.txt
 #
@@ -248,29 +258,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 Notice that the changes are on the staged area.
 Again, we can put things back the way they were
-by using `git checkout`:
+by using `git restore`:
 
 ```bash
-$ git checkout HEAD mars.txt
+$ git restore HEAD mars.txt
 ```
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Don't Lose Your HEAD
-
-Above we used
-
-```bash
-$ git checkout f22b25e mars.txt
-```
-
-to revert `mars.txt` to its state after the commit `f22b25e`.
-If you forget `mars.txt` in that command, Git will tell you that "You are in
-'detached HEAD' state." In this state, you shouldn't make any changes.
-You can fix this by reattaching your head using `git checkout main`
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
@@ -280,7 +272,7 @@ the commit in which we made the change we're trying to get rid of.
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`:
 
-![](fig/git-checkout.svg){alt='Git Checkout'}
+![](fig/git-restore.svg){alt='Git Checkout'}
 
 So, to put it all together,
 here's how Git works in cartoon form:
@@ -295,11 +287,11 @@ If you read the output of `git status` carefully,
 you'll see that it includes this hint:
 
 ```bash
-(use "git checkout -- <file>..." to discard changes in working directory)
+(use "git restore -- <file>..." to discard changes in working directory)
 ```
 
 As it says,
-`git checkout` without a version identifier restores files to the state saved in `HEAD`.
+`git restore` without a version identifier restores files to the state saved in `HEAD`.
 The double dash `--` is needed to separate the names of the files being recovered
 from the command itself:
 without it,
@@ -329,44 +321,19 @@ Luckily, she has been keeping track of her project's versions using Git! Which c
 let her recover the last committed version of her Python script called
 `data_cruncher.py`?
 
-1. `$ git checkout HEAD`
+1. `$ git restore HEAD`
 
-2. `$ git checkout HEAD data_cruncher.py`
+2. `$ git restore HEAD data_cruncher.py`
 
-3. `$ git checkout HEAD~1 data_cruncher.py`
+3. `$ git restore HEAD~1 data_cruncher.py`
 
-4. `$ git checkout <unique ID of last commit> data_cruncher.py`
+4. `$ git restore <unique ID of last commit> data_cruncher.py`
 
 5. Both 2 and 4
   
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Reverting a Commit
-
-Jennifer is collaborating on her Python script with her colleagues and
-realizes her last commit to the group repository is wrong and wants to
-undo it.  Jennifer needs to undo correctly so everyone in the group
-repository gets the correct change.  `git revert [wrong commit ID]`
-will make a new commit that undoes Jennifer's previous wrong
-commit. Therefore `git revert` is different than `git checkout [commit ID]` because `checkout` is for local changes not committed to the
-group repository.  Below are the right steps and explanations for
-Jennifer to use `git revert`, what is the missing command?
-
-1. \_\_\_\_\_\_\_\_ # Look at the git history of the project to find the commit ID
-
-2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
-
-3. `git revert [commit ID]`
-
-4. Type in the new commit message.
-
-5. Save and close
-  
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -380,7 +347,7 @@ $ nano venus.txt #input the following text: Venus is beautiful and full of love
 $ git add venus.txt
 $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
 $ git commit -m "Comment on Venus as an unsuitable base"
-$ git checkout HEAD venus.txt
+$ git restore HEAD venus.txt
 $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 
@@ -442,10 +409,10 @@ $ git commit -m "Comment on Venus as an unsuitable base"
 The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
 
 ```bash
-$ git checkout HEAD venus.txt
+$ git restore HEAD venus.txt
 ```
 
-With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
+With restore we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
 
 ```bash
 $ cat venus.txt #this will print the contents of venus.txt to the screen
@@ -475,9 +442,9 @@ and what does happen?
 
 ## Getting Rid of Staged Changes
 
-`git checkout` can be used to restore a previous commit when unstaged changes have
+`git restore` can be used to restore a previous commit when unstaged changes have
 been made, but will it also work for changes that have been staged but not committed?
-Make a change to `mars.txt`, add that change, and use `git checkout` to see if
+Make a change to `mars.txt`, add that change, and use `git restore` to see if
 you can remove your change.
 
 
@@ -525,7 +492,8 @@ $ git log --patch HEAD~3 *.txt
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - `git diff` displays differences between commits.
-- `git checkout` recovers old versions of files.
+- `git restore` recovers old versions of files.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

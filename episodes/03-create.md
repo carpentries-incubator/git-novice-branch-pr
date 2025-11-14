@@ -60,8 +60,15 @@ of git.
 See the [setup episode](02-setup.md) for more information on this change.
 
 ```bash
-git checkout -b main
+git switch --create main
 ```
+
+If main is already the default branch:
+```output
+fatal: a branch named 'main' already exists
+```
+
+If your command created main:
 
 ```output
 Switched to a new branch 'main'
