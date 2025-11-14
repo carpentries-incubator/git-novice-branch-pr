@@ -63,7 +63,7 @@ To see if your default shell is Bash type `echo $SHELL` in a terminal and press 
 
 Git is a version control system that lets you track who made changes to what when and has options for easily updating a shared or public version of your code on [github.com](https://github.com/). You will need a [supported web browser](https://help.github.com/articles/supported-browsers/).
 
-For this workshop you will need version `2.23.0` or later. You can tell what version you have by running `git --version` in the shell.
+For this workshop you will need version `2.23.0` or later. You can tell what version you have by running `git --version` in the unix shell/git Bash.
 
 You will need an account at [github.com](https://github.com/) for parts of the Git lesson. Basic GitHub accounts are free. We encourage you to create a GitHub account if you don't have one already. Please consider what personal information you'd like to reveal. For example, you may want to review these instructions for [keeping your email address private provided by GitHub](https://help.github.com/articles/keeping-your-email-address-private/).
 

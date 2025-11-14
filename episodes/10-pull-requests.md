@@ -496,7 +496,7 @@ Now the owner/administrator/manager of the authoritative repo can review our pul
 
 ```bash
 $ git switch main
-$ git switch -b addItaly
+$ git switch -c addItaly
 $ cp united_states.txt italy.txt
 $ nano italy.txt #Add the right info into the file
 $ git add italy.txt

@@ -109,7 +109,7 @@ a nickname to switch to a version of the repository that matches the most recent
 commit in that branch (a.k.a. the HEAD of that branch).
 
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+:::::::::::::::::::::::::::::::::::::::::  spoiler
 
 ## Don't Lose Your HEAD
 
