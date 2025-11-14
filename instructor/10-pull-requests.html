@@ -390,7 +390,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pull Requests</h1>
-        <p>Last updated on 2025-05-12 |
+        <p>Last updated on 2025-11-14 |
 
         <a href="https://github.com/carpentries-incubator/git-novice-branch-pr/edit/main/episodes/10-pull-requests.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -589,7 +589,7 @@ one step as we learned earlier in the branching lesson.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> addFrance</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> addFrance</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -918,13 +918,13 @@ PR</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
-<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> addItaly</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> addItaly</span>
 <span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="ex">$</span> cp united_states.txt italy.txt</span>
 <span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a><span class="ex">$</span> nano italy.txt <span class="co">#Add the right info into the file</span></span>
 <span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="ex">$</span> git add italy.txt</span>
@@ -1008,8 +1008,8 @@ privileges</li>
   "url": "https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/10-pull-requests.html",
   "identifier": "https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/10-pull-requests.html",
   "dateCreated": "2013-11-02",
-  "dateModified": "2025-05-12",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-14",
+  "datePublished": "2025-11-14"
 }
 
   </script><script>

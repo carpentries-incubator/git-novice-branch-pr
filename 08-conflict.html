@@ -390,7 +390,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Conflicts</h1>
-        <p>Last updated on 2025-10-27 |
+        <p>Last updated on 2025-11-14 |
 
         <a href="https://github.com/carpentries-incubator/git-novice-branch-pr/edit/main/episodes/08-conflict.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -446,8 +446,8 @@ file <code>mars.txt</code> currently looks like this in our
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
-<p>Let’s create a new branch for discussing Mars’ temperature and
-checkout that branch.</p>
+<p>Let’s create a new branch for discussing Mars’ temperature and switch
+to that branch.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -504,7 +504,7 @@ let’s get to work on our comments about the temperature in the
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git checkout marsTemp</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git switch marsTemp</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -571,12 +571,12 @@ branch.</p>
 </div>
 </div>
 <p>Now that we’ve added changes about the temperature we can merge them
-into the <code>main</code> branch. First, let’s checkout the
+into the <code>main</code> branch. First, let’s switch to the
 <code>main</code> branch.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -707,7 +707,7 @@ fix things by hand again.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git checkout marsTemp</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git switch marsTemp</span>
 <span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"The polar caps will probably be Yeti's home"</span> <span class="op">&gt;&gt;</span> mars.txt</span>
 <span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
 <span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"A note about Yeti's home"</span></span></code></pre>
@@ -719,7 +719,7 @@ fix things by hand again.</p>
  1 file changed, 1 insertion(+)</code></pre>
 </div>
 <p>And merge that change into main branch</p>
-<pre><code>$ git checkout main
+<pre><code>$ git switch main
 $ git merge marsTemp</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -813,13 +813,13 @@ to the repository</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co"># to make sure we're starting in the main branch</span></span>
-<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a><span class="ex">$</span> git switch main </span>
 <span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a><span class="co"># create a new branch, but don't change into it</span></span>
 <span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a><span class="ex">$</span> git branch new_branch </span>
 <span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a><span class="co"># make a change to the file</span></span>
@@ -828,14 +828,14 @@ to the repository</li>
 <span id="cb38-8"><a href="#cb38-8" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
 <span id="cb38-9"><a href="#cb38-9" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Small change to mars.txt"</span></span>
 <span id="cb38-10"><a href="#cb38-10" tabindex="-1"></a><span class="co"># switch to the new branch</span></span>
-<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a><span class="ex">$</span> git checkout new_branch </span>
+<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a><span class="ex">$</span> git switch new_branch </span>
 <span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a><span class="co"># make a change to mars.txt on the same line</span></span>
 <span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
 <span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
 <span id="cb38-15"><a href="#cb38-15" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
 <span id="cb38-16"><a href="#cb38-16" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Another change to mars.txt"</span></span>
 <span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a><span class="co"># change back to the main branch</span></span>
-<span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
+<span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a><span class="ex">$</span> git switch main </span>
 <span id="cb38-19"><a href="#cb38-19" tabindex="-1"></a><span class="co"># attempt to merge the branches</span></span>
 <span id="cb38-20"><a href="#cb38-20" tabindex="-1"></a><span class="ex">$</span> git merge new_branch </span>
 <span id="cb38-21"><a href="#cb38-21" tabindex="-1"></a><span class="co"># address conflicts by removing `&lt;&lt;&lt;`, `===`, and `&gt;&gt;&gt;` lines leaving the desired changes intact</span></span>
@@ -923,8 +923,8 @@ resolved.</li>
   "url": "https://carpentries-incubator.github.io/git-novice-branch-pr/08-conflict.html",
   "identifier": "https://carpentries-incubator.github.io/git-novice-branch-pr/08-conflict.html",
   "dateCreated": "2013-11-02",
-  "dateModified": "2025-10-27",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-14",
+  "datePublished": "2025-11-14"
 }
 
   </script><script>
