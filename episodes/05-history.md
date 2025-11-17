@@ -209,7 +209,7 @@ without updating HEAD.
 ::::::::::::::::::::::::::::::::::::::::::
 
 ```bash
-$ git restore HEAD mars.txt
+$ git restore -s HEAD mars.txt
 $ cat mars.txt
 ```
 
@@ -228,7 +228,7 @@ If we want to go back even further,
 we can use a commit identifier instead:
 
 ```bash
-$ git restore f22b25e mars.txt
+$ git restore -s f22b25e mars.txt
 ```
 
 ```bash
@@ -261,7 +261,7 @@ Again, we can put things back the way they were
 by using `git restore`:
 
 ```bash
-$ git restore HEAD mars.txt
+$ git restore -s HEAD mars.txt
 ```
 
 It's important to remember that
@@ -321,13 +321,13 @@ Luckily, she has been keeping track of her project's versions using Git! Which c
 let her recover the last committed version of her Python script called
 `data_cruncher.py`?
 
-1. `$ git restore HEAD`
+1. `$ git restore -s HEAD`
 
-2. `$ git restore HEAD data_cruncher.py`
+2. `$ git restore -s HEAD data_cruncher.py`
 
-3. `$ git restore HEAD~1 data_cruncher.py`
+3. `$ git restore -s HEAD~1 data_cruncher.py`
 
-4. `$ git restore <unique ID of last commit> data_cruncher.py`
+4. `$ git restore -s <unique ID of last commit> data_cruncher.py`
 
 5. Both 2 and 4
   
@@ -347,7 +347,7 @@ $ nano venus.txt #input the following text: Venus is beautiful and full of love
 $ git add venus.txt
 $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
 $ git commit -m "Comment on Venus as an unsuitable base"
-$ git restore HEAD venus.txt
+$ git restore -s HEAD venus.txt
 $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 
