@@ -272,60 +272,6 @@ $ git commit -m "Merge changes from marsTemp"
 Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again.
 
-Let's make another change to the `marsTemp` branch:
-
-```bash
-$ git switch marsTemp
-$ echo "The polar caps will probably be Yeti's home" >> mars.txt
-$ git add mars.txt
-$ git commit -m "A note about Yeti's home"
-```
-
-```output
-[marsTemp 34avo82] A note about Yeti's home
- 1 file changed, 1 insertion(+)
-```
-
-And merge that change into main branch
-
-```
-$ git switch main
-$ git merge marsTemp
-```
-
-```output
-Updating 12687f6..x792csa1
-Fast-forward
- mars.txt | 1 +
- 1 file changed, 1 insertions(+), 0 deletions(-)
-```
-
-There is no conflict and our changes are added automatically
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Still seeing a conflict?
-
-This exercise is dependent on how the merge conflict was resolved
-in our first merge of the marsTemp branch and may still result
-in a conflict when merging additional commits from the marsTemp branch.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-```bash
-$ cat mars.txt
-```
-
-```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-I'll be able to get 40 extra minutes of beauty rest
-Yeti will appreciate the cold
-The polar caps will probably be Yeti's home
-```
-
-We don't need to merge again because Git knows someone has already done that.
 
 Git's ability to resolve conflicts is very useful, but conflict resolution
 costs time and effort, and can introduce errors if conflicts are not resolved
