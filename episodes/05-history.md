@@ -209,7 +209,7 @@ without updating HEAD.
 ::::::::::::::::::::::::::::::::::::::::::
 
 ```bash
-$ git restore -s HEAD mars.txt
+$ git restore mars.txt
 $ cat mars.txt
 ```
 
@@ -221,15 +221,15 @@ But the Mummy will appreciate the lack of humidity
 
 As you might guess from its name,
 `git restore` restores an old version of a file.
-In this case,
-we're telling Git that we want to recover the version of the file recorded in `HEAD`,
-which is the last saved commit.
+By default, it will restore the verison in the last saved commit.
 If we want to go back even further,
-we can use a commit identifier instead:
+we can use `-s` with a commit identifier instead:
 
 ```bash
 $ git restore -s f22b25e mars.txt
 ```
+
+The `s` stands for "source".
 
 ```bash
 $ cat mars.txt
@@ -261,7 +261,7 @@ Again, we can put things back the way they were
 by using `git restore`:
 
 ```bash
-$ git restore -s HEAD mars.txt
+$ git restore mars.txt
 ```
 
 It's important to remember that
@@ -321,9 +321,9 @@ Luckily, she has been keeping track of her project's versions using Git! Which c
 let her recover the last committed version of her Python script called
 `data_cruncher.py`?
 
-1. `$ git restore -s HEAD`
+1. `$ git restore`
 
-2. `$ git restore -s HEAD data_cruncher.py`
+2. `$ git restore data_cruncher.py`
 
 3. `$ git restore -s HEAD~1 data_cruncher.py`
 
@@ -347,7 +347,7 @@ $ nano venus.txt #input the following text: Venus is beautiful and full of love
 $ git add venus.txt
 $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
 $ git commit -m "Comment on Venus as an unsuitable base"
-$ git restore -s HEAD venus.txt
+$ git restore venus.txt
 $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 
@@ -409,7 +409,7 @@ $ git commit -m "Comment on Venus as an unsuitable base"
 The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
 
 ```bash
-$ git restore HEAD venus.txt
+$ git restore venus.txt
 ```
 
 With restore we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
@@ -494,7 +494,4 @@ $ git log --patch HEAD~3 *.txt
 - `git diff` displays differences between commits.
 - `git restore` recovers old versions of files.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
