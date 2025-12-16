@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring History</h1>
-        <p>Last updated on 2025-11-14 |
+        <p>Last updated on 2025-12-16 |
 
         <a href="https://github.com/carpentries-incubator/git-novice-branch-pr/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -618,7 +618,7 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p><code>git restore</code> and <code>git switch</code> were introduced
 in git 2.23.0 to separate the previous <code>git checkout</code>
@@ -632,7 +632,7 @@ the staging area (often file by file) without updating HEAD.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git restore HEAD mars.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -643,15 +643,15 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
 <p>As you might guess from its name, <code>git restore</code> restores
-an old version of a file. In this case, we’re telling Git that we want
-to recover the version of the file recorded in <code>HEAD</code>, which
-is the last saved commit. If we want to go back even further, we can use
-a commit identifier instead:</p>
+an old version of a file. By default, it will restore the verison in the
+last saved commit. If we want to go back even further, we can use
+<code>-s</code> with a commit identifier instead:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> git restore f22b25e mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">-s</span> f22b25e mars.txt</span></code></pre>
 </div>
+<p>The <code>s</code> stands for “source”.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -686,7 +686,7 @@ things back the way they were by using <code>git restore</code>:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git restore HEAD mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span></code></pre>
 </div>
 <p>It’s important to remember that we must use the commit number that
 identifies the state of the repository <em>before</em> the change we’re
@@ -740,10 +740,10 @@ fix it, with no luck…</p>
 <p>Luckily, she has been keeping track of her project’s versions using
 Git! Which commands below will let her recover the last committed
 version of her Python script called <code>data_cruncher.py</code>?</p>
-<ol style="list-style-type: decimal"><li><p><code>$ git restore HEAD</code></p></li>
-<li><p><code>$ git restore HEAD data_cruncher.py</code></p></li>
-<li><p><code>$ git restore HEAD~1 data_cruncher.py</code></p></li>
-<li><p><code>$ git restore &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
+<ol style="list-style-type: decimal"><li><p><code>$ git restore</code></p></li>
+<li><p><code>$ git restore data_cruncher.py</code></p></li>
+<li><p><code>$ git restore -s HEAD~1 data_cruncher.py</code></p></li>
+<li><p><code>$ git restore -s &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
 <li><p>Both 2 and 4</p></li>
 </ol></div>
 </div>
@@ -766,7 +766,7 @@ commands?</p>
 <span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="ex">$</span> git add venus.txt</span>
 <span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="ex">$</span> nano venus.txt <span class="co">#add the following text: Venus is too hot to be suitable as a base</span></span>
 <span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Comment on Venus as an unsuitable base"</span></span>
-<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a><span class="ex">$</span> git restore HEAD venus.txt</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a><span class="ex">$</span> git restore venus.txt</span>
 <span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a><span class="ex">$</span> cat venus.txt <span class="co">#this will print the contents of venus.txt to the screen</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>
@@ -802,7 +802,7 @@ Venus is too hot to be suitable as a base</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Line by line:</p>
 <div class="codewrapper sourceCode" id="cb32">
@@ -844,7 +844,7 @@ than the copy in our local repository.</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git restore HEAD venus.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git restore venus.txt</span></code></pre>
 </div>
 <p>With restore we discard the changes in the working directory so that
 our local copy is exactly the same as our HEAD, the most recent
@@ -1016,7 +1016,7 @@ both commit messages and the difference between each commit.</p>
   "url": "https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/05-history.html",
   "identifier": "https://carpentries-incubator.github.io/git-novice-branch-pr/instructor/05-history.html",
   "dateCreated": "2013-11-02",
-  "dateModified": "2025-11-14",
+  "dateModified": "2025-12-16",
   "datePublished": "2025-12-16"
 }
 
