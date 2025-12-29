@@ -6,7 +6,7 @@ message: >-
   branches and pull requests.
 type: dataset
 authors:
-  - given-names: Sarah
+  - given-names: Sarah LR
     family-names: Stevens
     email: sarah.stevens@wisc.edu
     affiliation: University of Wisconsin-Madison
