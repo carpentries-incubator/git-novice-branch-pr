@@ -223,7 +223,7 @@ $ git branch
   pythondev
 ```
 
-This time let's create and switch two the `bashdev` branch
+This time let's create and switch to the `bashdev` branch
 in one command.
 
 We can do so by adding the `-c` flag to switch.
