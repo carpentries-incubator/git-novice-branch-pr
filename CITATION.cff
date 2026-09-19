@@ -1,0 +1,54 @@
+cff-version: 1.0.0
+title: Version Control with Git
+message: >-
+  This lesson is a variation on the Software Carpentry
+  Version Control with Git lesson that includes episodes on
+  branches and pull requests.
+type: dataset
+authors:
+  - given-names: Sarah LR
+    family-names: Stevens
+    email: sarah.stevens@wisc.edu
+    affiliation: University of Wisconsin-Madison
+    orcid: 'https://orcid.org/0000-0002-7040-548X'
+  - given-names: Patrick
+    family-names: Shriwise
+    orcid: 'https://orcid.org/0000-0002-3979-7665'
+  - given-names: Stephen
+    family-names: Appel
+    orcid: 'https://orcid.org/0000-0002-4976-8489'
+  - given-names: David
+    family-names: Hoese
+    orcid: 'https://orcid.org/0000-0003-1167-7829'
+  - given-names: Katrina
+    family-names: Brock
+    orcid: 'https://orcid.org/0009-0003-4678-9545'
+  - given-names: Christina
+    family-names: Koch
+    orcid: 'https://orcid.org/0000-0001-8600-8158'
+  - given-names: James
+    family-names: Byrne
+    orcid: 'https://orcid.org/0000-0003-3731-2377'
+  - name-suffix: 0000-0003-0505-7973
+    given-names: Katherine
+    family-names: Koziar
+    orcid: 'https://orcid.org/0000-0003-0505-7973'
+repository-code: >-
+  https://github.com/carpentries-incubator/git-novice-branch-pr
+url: >-
+  https://carpentries-incubator.github.io/git-novice-branch-pr/
+reference-repository: 'https://github.com/swcarpentry/git-novice'
+abstract: >-
+  This lesson is a variation on the Software Carpentry
+  Version Control with Git - novice lesson.  It adds in
+  episodes on branches and pull requests and edits conflicts
+  to work in branches instead of with GitHub.
+keywords:
+  - git
+  - GitHub
+  - lesson
+  - Software Carpentry
+  - Carpentries
+  - Carpentries Incubator
+  - novice
+license: CC-BY-4.0
