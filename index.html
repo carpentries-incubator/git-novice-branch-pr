@@ -24,7 +24,11 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="Lesson Description" src="assets/images/incubator-logo.svg"></div>
+        <a href="index.html">
+        <img id="incubator-logo" alt="Lesson Description" src="assets/images/incubator-logo.svg"></a>
+
+
+      </div>
     </div>
     <div class="selector-container">
       <menu class="theme-selector" id="theme-selector-menu"><li class="nav-item dropdown theme-button-list" id="theme-button-list-menu">
@@ -64,7 +68,9 @@
       <span class="menu-title">Menu</span>
     </button>
     <div class="nav-logo">
-      <img class="small-logo" alt="Lesson Description" src="assets/images/incubator-logo-sm.svg"></div>
+      <a href="index.html">
+      <img class="small-logo" alt="Lesson Description" src="assets/images/incubator-logo-sm.svg"></a>
+    </div>
     <div class="lesson-title-md">
       Version Control with Git
     </div>
@@ -105,7 +111,7 @@
       </fieldset>
     </form>
     -->
-    <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
+    <a id="search-button-nav" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><div class="container">
       <div class="row">
@@ -116,6 +122,9 @@
           <i class="search-icon" data-feather="x" role="img"></i>
         </button>
         <div class="sidebar-inner">
+          <div class="row mobile-row" id="theme-row-mobile">
+            <a id="search-button-sidebar" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
+          </div>
           <div class="row mobile-row" id="theme-row-mobile">
             <menu class="col theme-selector" id="theme-selector-sidebar"><li class="nav-item dropdown theme-button-list" id="theme-button-list-sidebar">
                 <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
@@ -158,6 +167,7 @@
                     </div>
                   </div><!--/div.accordion-item-->
                 </div><!--/div.accordion-flush-->
+
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
@@ -334,6 +344,29 @@
               </div>
             </div>
 
+            <hr class="half-width"><div class="accordion accordion-flush" id="accordion-links-toggle">
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading-links-toggle">
+                  <button class="accordion-button collapsed" id="links" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-links-toggle" aria-expanded="false" aria-controls="flush-collapse-links-toggle">
+                    LINKS
+                  </button>
+                </h2>
+                <div id="flush-collapse-links-toggle" class="accordion-collapse show collapse" data-bs-parent="#accordion-links-toggle">
+                    <div class="accordion-body">
+                        <ul><li>
+                            <a href="key-points.html">Key Points</a>
+                            </li>
+                            <li>
+                            <a href="reference.html#glossary">Glossary</a>
+                            </li>
+                            <li>
+                            <a href="profiles.html">Learner Profiles</a>
+                            </li>
+                        </ul></div>
+                </div>
+                </div><!--/div.accordion-item-->
+            </div><!--/div.accordion-flush-->
+
             <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordion-resources-toggle">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading-resources-toggle">
@@ -343,16 +376,7 @@
                 </h2>
                 <div id="flush-collapse-resources-toggle" class="accordion-collapse collapse" data-bs-parent="#accordion-resources-toggle">
                   <div class="accordion-body">
-                    <ul><li>
-                        <a href="key-points.html">Key Points</a>
-                      </li>
-                      <li>
-                        <a href="reference.html#glossary">Glossary</a>
-                      </li>
-                      <li>
-                        <a href="profiles.html">Learner Profiles</a>
-                      </li>
-                      <li><a href="discuss.html">Discussion</a></li><li><a href="reference.html"></a></li>
+                    <ul><li><a href="discuss.html">Discussion</a></li><li><a href="reference.html"></a></li>
                     </ul></div>
                 </div>
               </div>
@@ -453,7 +477,7 @@ more quickly.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>Windows users will install a bash shell called Git Bash when
 installing git following the instructions below:</p>
 <ol style="list-style-type: decimal"><li>Download the Git for Windows <a href="https://gitforwindows.org/" class="external-link">installer</a>.</li>
@@ -502,7 +526,7 @@ to the newest verison, currently 2.35.1.2. When you launch the
 installer, ensure “Only show new options” is
 <strong>unchecked</strong>.</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>The default shell in some versions of macOS is Bash, and Bash is
 available in all versions, so no need to install anything. You access
 Bash from the Terminal (found in <code>/Applications/Utilities</code>).
@@ -515,7 +539,7 @@ typing <code>bash</code></p>
 article</a> and follow the instructions on “How to change your default
 shell”.</p>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
 <p>The default shell is usually Bash and there is usually no need to
 install anything.</p>
 <p>To see if your default shell is Bash type <code>echo $SHELL</code> in
@@ -559,11 +583,11 @@ your email address private provided by GitHub</a>.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
 <p>Git should be installed on your computer as part of your Bash install
 (see the Shell installation instructions above).</p>
 </div>
-<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
+<div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
 <p>Please open the Terminal app, type <code>git --version</code> and
 press Enter/Return. If it’s not installed already, follow the
 instructions to <code>Install</code> the “command line developer tools”.
@@ -578,7 +602,7 @@ installer is not signed by the developer, you may have to right click
 (control click) on the .pkg file, click Open, and click Open in the
 pop-up dialog.</p>
 </div>
-<div id="nav-tabpanel-2-3" class="tab-pane" aria-labelledby="nav-tab-2-3" role="tabpanel">
+<div id="nav-tabpanel-2-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-3">
 <p>If Git is not already available on your machine you can try to
 install it via your distro’s package manager. For Debian/Ubuntu run
 <code>sudo apt-get install git</code> and for Fedora run
@@ -615,7 +639,7 @@ install it via your distro’s package manager. For Debian/Ubuntu run
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.2)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.3)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -637,8 +661,8 @@ install it via your distro’s package manager. For Debian/Ubuntu run
   "url": "https://carpentries-incubator.github.io/git-novice-branch-pr/index.html",
   "identifier": "https://carpentries-incubator.github.io/git-novice-branch-pr/index.html",
   "dateCreated": "2013-11-02",
-  "dateModified": "2026-09-29",
-  "datePublished": "2026-09-29"
+  "dateModified": "2026-10-06",
+  "datePublished": "2026-10-06"
 }
 
   </script><script>
@@ -647,7 +671,7 @@ install it via your distro’s package manager. For Debian/Ubuntu run
           var _paq = window._paq = window._paq || [];
           /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
           _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-          _paq.push(["setDomains", ["*.lessons.carpentries.org","*.datacarpentry.github.io","*.datacarpentry.org","*.librarycarpentry.github.io","*.librarycarpentry.org","*.swcarpentry.github.io", "*.carpentries.github.io"]]);
+          _paq.push(["setDomains", ["*.lessons.carpentries.org","*.datacarpentry.github.io","*.datacarpentry.org","*.hpc-carpentry.github.io","*.hpc-carpentry.org","*.librarycarpentry.github.io","*.librarycarpentry.org","*.swcarpentry.github.io", "*.carpentries.github.io"]]);
           _paq.push(["setDoNotTrack", true]);
           _paq.push(["disableCookies"]);
           _paq.push(["trackPageView"]);
